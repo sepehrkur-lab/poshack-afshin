@@ -4,167 +4,118 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>جزئیات محصول | پوشاک سپهر</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script defer src="js/products.js"></script>
-  <script defer src="js/script.js"></script>
-  <script defer src="js/product-loader.js"></script>
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- 🔝 Header -->
   <header class="header">
-    <div class="container">
-      <div class="header-top">
-        <div class="logo">
-          <i class="fas fa-crown"></i>
-          <span>پوشاک سپهر</span>
-        </div>
-        <div class="header-actions">
-          <div class="search-box">
-            <input type="text" placeholder="جستجوی محصولات..." id="searchInput">
-            <button class="search-btn"><i class="fas fa-search"></i></button>
-            <div class="search-results" id="searchResults"></div>
-          </div>
-          <div class="action-buttons">
-            <button class="action-btn" id="cartBtn">
-              <i class="fas fa-shopping-bag"></i>
-              <span class="action-count" id="cartCount">0</span>
-            </button>
-          </div>
-        </div>
+    <div class="header-top">
+      <div class="logo">
+        <i class="fas fa-crown"></i>
+        <span>پوشاک سپهر</span>
       </div>
-      <nav class="navbar">
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">خانه</a></li>
-          <li><a href="products.html" class="nav-link">محصولات</a></li>
-          <li><a href="products.html?discount=true" class="nav-link">تخفیف‌ها</a></li>
-          <li><a href="about.html" class="nav-link">درباره ما</a></li>
-          <li><a href="contact.html" class="nav-link">تماس با ما</a></li>
-        </ul>
-      </nav>
+      <div class="header-actions">
+        <button id="cartBtn" class="btn btn-outline">
+          <i class="fas fa-shopping-bag"></i>
+          <span id="cartCount">0</span>
+        </button>
+      </div>
     </div>
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">خانه</a></li>
+        <li><a href="products.html" class="nav-link">محصولات</a></li>
+        <li><a href="about.html" class="nav-link">درباره ما</a></li>
+        <li><a href="contact.html" class="nav-link">تماس با ما</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Product Detail -->
-  <section class="container" id="productDetail">
-    <!-- محصول با جاوااسکریپت لود می‌شود -->
+  <!-- 📌 Product Detail -->
+  <section class="container" style="margin:2rem 0">
+    <div id="productDetail" style="display:flex;flex-wrap:wrap;gap:2rem;align-items:flex-start"></div>
   </section>
 
-  <!-- Related Products -->
-  <section class="container" style="margin-top: 3rem;">
-    <div class="section-header">
-      <h2>محصولات مشابه</h2>
-    </div>
-    <div class="products-grid" id="relatedProducts">
-      <!-- محصولات مشابه با جاوااسکریپت لود می‌شوند -->
-    </div>
-  </section>
-
-  <!-- Footer -->
+  <!-- 👣 Footer -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <div class="footer-logo">
-            <i class="fas fa-crown"></i>
-            <span>پوشاک سپهر</span>
-          </div>
-          <p>۵ سال تجربه در عرضه پوشاک باکیفیت</p>
-        </div>
-        <div class="footer-section">
-          <h3>لینک‌های سریع</h3>
-          <ul>
-            <li><a href="index.html">خانه</a></li>
-            <li><a href="products.html">محصولات</a></li>
-            <li><a href="about.html">درباره ما</a></li>
-            <li><a href="contact.html">تماس با ما</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>ارتباط</h3>
-          <p><i class="fas fa-phone"></i> 09184740946</p>
-          <p><i class="fas fa-envelope"></i> sepehrkur@gmail.com</p>
-        </div>
+    <div class="footer-content">
+      <div>
+        <div class="footer-logo"><i class="fas fa-crown"></i> پوشاک سپهر</div>
+        <p>۵ سال تجربه در عرضه پوشاک باکیفیت</p>
+      </div>
+      <div>
+        <h3>لینک‌ها</h3>
+        <ul>
+          <li><a href="index.html">خانه</a></li>
+          <li><a href="products.html">محصولات</a></li>
+          <li><a href="contact.html">تماس با ما</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>ارتباط</h3>
+        <p><i class="fas fa-phone"></i> 09184740946</p>
+        <p><i class="fas fa-envelope"></i> sepehrkur@gmail.com</p>
       </div>
     </div>
   </footer>
 
-  <!-- Cart Sidebar -->
+  <!-- 🛒 Cart Sidebar -->
   <aside id="cartSidebar" class="cart-sidebar">
     <div class="cart-header">
-      <h3>🛒 سبد خرید</h3>
+      <h3>سبد خرید</h3>
       <button id="closeCart"><i class="fas fa-times"></i></button>
     </div>
-    <div id="cartItems"></div>
+    <div id="cartItems" class="cart-items"></div>
     <div class="cart-footer">
-      <div class="cart-total">
-        جمع کل: <span id="cartTotal">0 تومان</span>
-      </div>
-      <button class="btn btn-primary" onclick="window.location.href='checkout.html'">تکمیل خرید</button>
+      <div>جمع کل: <span id="cartTotal">0 تومان</span></div>
+      <a href="checkout.html" class="btn btn-primary" style="margin-top:1rem;width:100%">تکمیل خرید</a>
     </div>
   </aside>
 
+  <!-- 📜 Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/product-loader.js"></script>
+  <script src="js/script.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
+    // نمایش جزئیات محصول
+    function getProductById(id) {
+      return products.find(p => p.id === id);
+    }
+
+    function renderProductDetail() {
       const params = new URLSearchParams(window.location.search);
-      const productId = parseInt(params.get("id"));
-      const allProducts = JSON.parse(localStorage.getItem("sepahr_products") || "[]");
-      const product = allProducts.find(p => p.id === productId);
+      const id = parseInt(params.get("id"));
+      const product = getProductById(id);
 
-      const detailContainer = document.getElementById("productDetail");
-      const relatedContainer = document.getElementById("relatedProducts");
-
+      const container = document.getElementById("productDetail");
       if (!product) {
-        detailContainer.innerHTML = `<p style="text-align:center;color:#e53e3e;">محصول یافت نشد!</p>`;
+        container.innerHTML = "<p>محصولی یافت نشد.</p>";
         return;
       }
 
-      detailContainer.innerHTML = `
-        <div class="product-detail">
-          <div class="product-detail-image">
-            <img src="${product.image}" alt="${product.name}">
+      container.innerHTML = `
+        <div style="flex:1;min-width:300px">
+          <img src="${product.image}" alt="${product.name}" 
+               style="width:100%;border-radius:var(--radius);box-shadow:var(--shadow)">
+        </div>
+        <div style="flex:1;min-width:280px">
+          <h1 style="margin-bottom:1rem">${product.name}</h1>
+          <div class="product-price">
+            <span class="current-price">${formatPrice(product.price)} تومان</span>
+            ${product.oldPrice ? `<span class="old-price">${formatPrice(product.oldPrice)} تومان</span>` : ""}
           </div>
-          <div class="product-detail-info">
-            <h1>${product.name}</h1>
-            <p class="product-category">${product.category}</p>
-            <div class="product-price">
-              <span class="current-price">${formatPrice(product.price)} تومان</span>
-              ${product.oldPrice ? `<span class="old-price">${formatPrice(product.oldPrice)} تومان</span>` : ""}
-            </div>
-            <p class="product-description">
-              ${product.description || "این محصول توضیحات ویژه‌ای ندارد."}
-            </p>
-            <button class="btn btn-primary" onclick="addToCart(${product.id})">افزودن به سبد خرید</button>
-          </div>
+          <p style="margin:1rem 0">${product.description || "بدون توضیحات."}</p>
+          <button class="btn btn-primary" onclick="addToCart(${product.id})">
+            افزودن به سبد خرید
+          </button>
         </div>
       `;
+    }
 
-      // محصولات مشابه
-      const related = allProducts
-        .filter(p => p.category === product.category && p.id !== product.id)
-        .slice(0, 4);
-
-      if (related.length > 0) {
-        relatedContainer.innerHTML = related.map(p => `
-          <div class="product-card">
-            <div class="product-image">
-              <img src="${p.image}" alt="${p.name}">
-            </div>
-            <div class="product-content">
-              <h3 class="product-title">${p.name}</h3>
-              <div class="product-price">
-                <span class="current-price">${formatPrice(p.price)} تومان</span>
-                ${p.oldPrice ? `<span class="old-price">${formatPrice(p.oldPrice)} تومان</span>` : ""}
-              </div>
-              <button class="btn btn-primary" onclick="addToCart(${p.id})">افزودن به سبد</button>
-            </div>
-          </div>
-        `).join("");
-      }
-    });
+    document.addEventListener("DOMContentLoaded", renderProductDetail);
   </script>
-
 </body>
 </html>
