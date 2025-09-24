@@ -1,373 +1,150 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>پوشاک سپهر - فروشگاه تخصصی پوشاک بچه‌گانه</title>
-    <meta name="description" content="فروشگاه اینترنتی پوشاک سپهر - ارائه بهترین پوشاک بچه‌گانه با کیفیت عالی و قیمت مناسب">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* استایل‌های اضافی برای طراحی پیشرفته */
-        .discount-badge {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            z-index: 2;
-        }
-        
-        .new-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: linear-gradient(45deg, #4834d4, #686de0);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            z-index: 2;
-        }
-        
-        .product-card {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .quick-view-btn {
-            position: absolute;
-            bottom: -50px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(255,255,255,0.9);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            opacity: 0;
-        }
-        
-        .product-card:hover .quick-view-btn {
-            bottom: 20px;
-            opacity: 1;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>پوشاک سپهر - فروشگاه اینترنتی بچه‌گانه</title>
+  <meta name="description" content="خرید آنلاین پوشاک بچه‌گانه با کیفیت و قیمت مناسب از فروشگاه پوشاک سپهر">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/products.js"></script>
+  <script defer src="js/script.js"></script>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-top">
-                <div class="logo">
-                    <i class="fas fa-crown"></i>
-                    <span>پوشاک سپهر</span>
-                </div>
-                
-                <div class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </div>
-                
-                <div class="header-actions">
-                    <div class="search-box">
-                        <input type="text" placeholder="جستجوی محصولات..." id="searchInput">
-                        <button class="search-btn"><i class="fas fa-search"></i></button>
-                        <div class="search-results" id="searchResults"></div>
-                    </div>
-                    
-                    <div class="action-buttons">
-                        <button class="action-btn" id="wishlistBtn">
-                            <i class="far fa-heart"></i>
-                            <span class="action-count" id="wishlistCount">0</span>
-                        </button>
-                        
-                        <button class="action-btn" id="cartBtn">
-                            <i class="fas fa-shopping-bag"></i>
-                            <span class="action-count" id="cartCount">0</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
 
-            <nav class="navbar" id="navbar">
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link active">خانه</a></li>
-                    <li class="nav-dropdown">
-                        <a href="products.html" class="nav-link">محصولات <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-menu">
-                            <a href="products.html?category=دخترانه" class="dropdown-link">
-                                <i class="fas fa-female"></i> پوشاک دخترانه
-                            </a>
-                            <a href="products.html?category=پسرانه" class="dropdown-link">
-                                <i class="fas fa-male"></i> پوشاک پسرانه
-                            </a>
-                            <a href="products.html?category=نوزادی" class="dropdown-link">
-                                <i class="fas fa-baby"></i> پوشاک نوزادی
-                            </a>
-                            <a href="products.html?category=اکسسوری" class="dropdown-link">
-                                <i class="fas fa-gem"></i> اکسسوری
-                            </a>
-                        </div>
-                    </li>
-                    <li><a href="products.html?discount=true" class="nav-link">تخفیف‌های ویژه</a></li>
-                    <li><a href="about.html" class="nav-link">درباره ما</a></li>
-                    <li><a href="contact.html" class="nav-link">تماس با ما</a></li>
-                </ul>
-            </nav>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-top">
+        <div class="logo">
+          <i class="fas fa-crown"></i>
+          <span>پوشاک سپهر</span>
         </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-slider">
-            <div class="slide active">
-                <div class="slide-content">
-                    <h1>مجموعه جدید پاییز و زمستان ۱۴۰۵</h1>
-                    <p>مناسب برای تمام سلیقه‌ها با کیفیت بی‌نظیر</p>
-                    <div class="hero-buttons">
-                        <button class="btn btn-primary" onclick="window.location.href='products.html'">مشاهده محصولات</button>
-                        <button class="btn btn-outline" onclick="window.location.href='about.html'">درباره ما</button>
-                    </div>
-                </div>
-                <div class="slide-image">
-                    <img src="https://images.unsplash.com/photo-1489987707025-2c9bc64c4776?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="پوشاک بچه‌گانه">
-                </div>
-            </div>
-        </div>
-    </section>
+        <div class="header-actions">
+          <div class="search-box">
+            <input type="text" placeholder="جستجوی محصولات..." id="searchInput">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+            <div class="search-results" id="searchResults"></div>
+          </div>
 
-    <!-- Featured Categories -->
-    <section class="categories-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>دسته‌بندی محصولات</h2>
-                <p>انتخاب از بین بهترین دسته‌بندی‌ها</p>
-            </div>
-            <div class="categories-grid">
-                <div class="category-card" onclick="window.location.href='products.html?category=دخترانه'">
-                    <div class="category-image">
-                        <img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="پوشاک دخترانه">
-                    </div>
-                    <div class="category-content">
-                        <h3>پوشاک دخترانه</h3>
-                        <p>زیباترین مدل‌ها برای دختران کوچولو</p>
-                    </div>
-                </div>
-                <div class="category-card" onclick="window.location.href='products.html?category=پسرانه'">
-                    <div class="category-image">
-                        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="پوشاک پسرانه">
-                    </div>
-                    <div class="category-content">
-                        <h3>پوشاک پسرانه</h3>
-                        <p>شیک‌ترین لباس‌ها برای پسران کوچولو</p>
-                    </div>
-                </div>
-                <div class="category-card" onclick="window.location.href='products.html?category=نوزادی'">
-                    <div class="category-image">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="پوشاک نوزادی">
-                    </div>
-                    <div class="category-content">
-                        <h3>پوشاک نوزادی</h3>
-                        <p>نرم‌ترین و لطیف‌ترین لباس‌ها برای نوزادان</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Products -->
-    <section class="featured-products">
-        <div class="container">
-            <div class="section-header">
-                <h2>محصولات ویژه</h2>
-                <p>برترین و پرفروش‌ترین محصولات ما</p>
-            </div>
-            
-            <div class="products-grid" id="featuredProducts">
-                <!-- محصولات از طریق JavaScript لود می‌شوند -->
-            </div>
-            
-            <div class="section-footer">
-                <button class="btn btn-outline-primary" onclick="window.location.href='products.html'">
-                    مشاهده همه محصولات
-                    <i class="fas fa-arrow-left"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Special Offers -->
-    <section class="offers-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>تخفیف‌های ویژه</h2>
-                <p>فرصت استثنایی برای خرید با بهترین قیمت</p>
-            </div>
-            
-            <div class="offers-grid" id="specialOffers">
-                <!-- محصولات تخفیف دار از طریق JavaScript لود می‌شوند -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <i class="fas fa-crown"></i>
-                        <span>پوشاک سپهر</span>
-                    </div>
-                    <p>فروشگاه اینترنتی پوشاک سپهر با بیش از 5 سال سابقه در زمینه ارائه پوشاک با کیفیت و قیمت مناسب</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-telegram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>لینک‌های سریع</h3>
-                    <ul>
-                        <li><a href="index.html">خانه</a></li>
-                        <li><a href="products.html">محصولات</a></li>
-                        <li><a href="about.html">درباره ما</a></li>
-                        <li><a href="contact.html">تماس با ما</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>خدمات مشتریان</h3>
-                    <ul>
-                        <li><a href="#">سوالات متداول</a></li>
-                        <li><a href="#">روش‌های پرداخت</a></li>
-                        <li><a href="#">شرایط بازگرداندن کالا</a></li>
-                        <li><a href="#">راهنمای اندازه‌گیری</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>تماس با ما</h3>
-                    <div class="contact-info">
-                        <p><i class="fas fa-phone"></i> 09184740946</p>
-                        <p><i class="fas fa-envelope"></i> sepehrkur@gmail.com</p>
-                        <p><i class="fas fa-map-marker-alt"></i> کرمانشاه، روانسر</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>کلیه حقوق این سایت متعلق به فروشگاه پوشاک سپهر می‌باشد © ۱۴۰۵</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Cart Sidebar -->
-    <div id="cartSidebar" class="cart-sidebar">
-        <div class="cart-header">
-            <h3>سبد خرید شما</h3>
-            <button class="close-cart" id="closeCart">
-                <i class="fas fa-times"></i>
+          <div class="action-buttons">
+            <button class="action-btn" id="wishlistBtn">
+              <i class="far fa-heart"></i>
+              <span class="action-count" id="wishlistCount">0</span>
             </button>
+            <button class="action-btn" id="cartBtn">
+              <i class="fas fa-shopping-bag"></i>
+              <span class="action-count" id="cartCount">0</span>
+            </button>
+            <button class="action-btn" id="userBtn">
+              <i class="far fa-user"></i>
+            </button>
+          </div>
         </div>
-        <div class="cart-items" id="cartItems">
-            <!-- آیتم‌های سبد خرید -->
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>جمع کل:</span>
-                <span id="cartTotal">0 تومان</span>
-            </div>
-            <button class="btn btn-primary" onclick="window.location.href='checkout.html'">تکمیل سفارش</button>
-            <button class="btn btn-outline" onclick="closeCart()">ادامه خرید</button>
-        </div>
+      </div>
+
+      <nav class="navbar">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">خانه</a></li>
+          <li><a href="products.html" class="nav-link">محصولات</a></li>
+          <li><a href="products.html?discount=true" class="nav-link">تخفیف‌ها</a></li>
+          <li><a href="about.html" class="nav-link">درباره ما</a></li>
+          <li><a href="contact.html" class="nav-link">تماس با ما</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <script src="js/products-data.js"></script>
-    <script src="js/script.js"></script>
-    <script>
-        // لود محصولات ویژه هنگام بارگذاری صفحه
-        document.addEventListener('DOMContentLoaded', function() {
-            loadFeaturedProducts();
-            loadSpecialOffers();
-            updateCartCounter();
-        });
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-slider">
+      <div class="slide active">
+        <div class="slide-content">
+          <h1>مجموعه جدید پاییز و زمستان 1405</h1>
+          <p>جدیدترین پوشاک بچه‌گانه با طراحی مدرن و کیفیت عالی</p>
+          <div class="hero-buttons">
+            <button class="btn btn-primary" onclick="window.location.href='products.html'">مشاهده محصولات</button>
+            <button class="btn btn-outline" onclick="window.location.href='about.html'">درباره ما</button>
+          </div>
+        </div>
+        <div class="slide-image">
+          <img src="https://images.unsplash.com/photo-1489987707025-2c9bc64c4776?auto=format&fit=crop&w=1200&q=80" alt="مد پاییزی">
+        </div>
+      </div>
+    </div>
+  </section>
 
-        function loadFeaturedProducts() {
-            const featuredProducts = productsData.filter(product => product.featured);
-            const container = document.getElementById('featuredProducts');
-            
-            if (container && featuredProducts.length > 0) {
-                container.innerHTML = featuredProducts.map(product => `
-                    <div class="product-card">
-                        ${product.discount ? `<div class="discount-badge">${product.discount}% تخفیف</div>` : ''}
-                        ${product.tags && product.tags.includes('جدید') ? `<div class="new-badge">جدید</div>` : ''}
-                        <div class="product-image">
-                            <img src="${product.image}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/300x300?text=تصویر+موجود+نیست'">
-                            <div class="product-actions">
-                                <button class="action-btn" onclick="addToCart(${product.id})">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </button>
-                                <button class="action-btn" onclick="addToWishlist(${product.id})">
-                                    <i class="far fa-heart"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="product-title">${product.name}</h3>
-                            <span class="product-category">${product.category}</span>
-                            <div class="product-price">
-                                <span class="current-price">${formatPrice(product.price)} تومان</span>
-                                ${product.oldPrice ? `<span class="old-price">${formatPrice(product.oldPrice)} تومان</span>` : ''}
-                            </div>
-                            <button class="add-to-cart" onclick="addToCart(${product.id})">
-                                <i class="fas fa-shopping-cart"></i>
-                                افزودن به سبد خرید
-                            </button>
-                        </div>
-                    </div>
-                `).join('');
-            }
-        }
+  <!-- Featured Products -->
+  <section class="featured-products">
+    <div class="container">
+      <div class="section-header">
+        <h2>محصولات ویژه</h2>
+        <p>پرفروش‌ترین‌ها و تخفیف‌های ویژه</p>
+      </div>
+      <div class="products-grid" id="featuredProducts">
+        <!-- محصولات از طریق JS لود می‌شوند -->
+      </div>
+    </div>
+  </section>
 
-        function loadSpecialOffers() {
-            const specialOffers = productsData.filter(product => product.discount && product.discount > 0);
-            const container = document.getElementById('specialOffers');
-            
-            if (container && specialOffers.length > 0) {
-                container.innerHTML = specialOffers.map(product => `
-                    <div class="product-card">
-                        <div class="discount-badge">${product.discount}% تخفیف</div>
-                        <div class="product-image">
-                            <img src="${product.image}" alt="${product.name}">
-                        </div>
-                        <div class="product-content">
-                            <h3 class="product-title">${product.name}</h3>
-                            <div class="product-price">
-                                <span class="current-price">${formatPrice(product.price)} تومان</span>
-                                <span class="old-price">${formatPrice(product.oldPrice)} تومان</span>
-                            </div>
-                            <button class="add-to-cart" onclick="addToCart(${product.id})">افزودن به سبد خرید</button>
-                        </div>
-                    </div>
-                `).join('');
-            }
-        }
+  <!-- Banner -->
+  <section class="banner">
+    <div class="container">
+      <div class="banner-box">
+        <h2>تخفیف پاییزه</h2>
+        <p>تا 40% تخفیف روی محصولات منتخب</p>
+        <button class="btn btn-primary" onclick="window.location.href='products.html?discount=true'">همین حالا خرید کنید</button>
+      </div>
+    </div>
+  </section>
 
-        function formatPrice(price) {
-            return new Intl.NumberFormat('fa-IR').format(price);
-        }
-    </script>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <i class="fas fa-crown"></i>
+            <span>پوشاک سپهر</span>
+          </div>
+          <p>۵ سال تجربه در عرضه پوشاک باکیفیت و قیمت مناسب</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>لینک‌های سریع</h3>
+          <ul>
+            <li><a href="index.html">خانه</a></li>
+            <li><a href="products.html">محصولات</a></li>
+            <li><a href="about.html">درباره ما</a></li>
+            <li><a href="contact.html">تماس با ما</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>تماس با ما</h3>
+          <p><i class="fas fa-phone"></i> 09184740946</p>
+          <p><i class="fas fa-envelope"></i> sepehrkur@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Sidebar -->
+  <aside id="cartSidebar" class="cart-sidebar">
+    <div class="cart-header">
+      <h3>🛒 سبد خرید</h3>
+      <button id="closeCart"><i class="fas fa-times"></i></button>
+    </div>
+    <div id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        جمع کل: <span id="cartTotal">0 تومان</span>
+      </div>
+      <button class="btn btn-primary" onclick="window.location.href='checkout.html'">تکمیل خرید</button>
+    </div>
+  </aside>
+
 </body>
 </html>
-
-
-
-
