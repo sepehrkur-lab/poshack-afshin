@@ -135,7 +135,7 @@ ul {list-style: none;}
   transform: translateY(-6px);
 }
 .product-image {
-  height: 220px;
+  height: 180px;
   overflow: hidden;
 }
 .product-image img {
@@ -241,3 +241,4 @@ ul {list-style: none;}
   .hero img {margin-top: 1rem;}
   .products-grid {grid-template-columns: 1fr;}
 }
+
