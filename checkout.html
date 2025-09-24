@@ -1,509 +1,159 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تکمیل خرید - پوشاک سپهر</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        .checkout-page {
-            padding: 80px 0 50px;
-            background: #f8fafc;
-            min-height: 100vh;
-        }
-
-        .checkout-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .checkout-header h1 {
-            font-size: 2.5rem;
-            color: #2d3748;
-            margin-bottom: 1rem;
-        }
-
-        .checkout-content {
-            display: grid;
-            grid-template-columns: 1fr 400px;
-            gap: 50px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .checkout-form {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .form-section {
-            margin-bottom: 40px;
-        }
-
-        .section-title {
-            font-size: 1.3rem;
-            color: #2d3748;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e2e8f0;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #2d3748;
-            font-weight: 600;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            font-size: 1rem;
-            font-family: 'Vazirmatn', sans-serif;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .checkout-summary {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            height: fit-content;
-            position: sticky;
-            top: 100px;
-        }
-
-        .order-items {
-            max-height: 300px;
-            overflow-y: auto;
-            margin-bottom: 20px;
-        }
-
-        .order-item {
-            display: flex;
-            align-items: center;
-            padding: 15px 0;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .item-image {
-            width: 60px;
-            height: 60px;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-left: 15px;
-        }
-
-        .item-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .item-details {
-            flex: 1;
-        }
-
-        .item-name {
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .item-price {
-            color: #718096;
-        }
-
-        .item-quantity {
-            background: #f7fafc;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        .order-totals {
-            border-top: 2px solid #e2e8f0;
-            padding-top: 20px;
-        }
-
-        .total-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            color: #718096;
-        }
-
-        .total-row.final {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #2d3748;
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        .complete-order {
-            width: 100%;
-            padding: 15px;
-            background: #48bb78;
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 20px;
-        }
-
-        .complete-order:hover {
-            background: #38a169;
-            transform: translateY(-2px);
-        }
-
-        @media (max-width: 968px) {
-            .checkout-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .checkout-summary {
-                position: static;
-            }
-            
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تکمیل خرید | پوشاک سپهر</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/script.js"></script>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-top">
-                <div class="logo">
-                    <i class="fas fa-crown"></i>
-                    <span>پوشاک سپهر</span>
-                </div>
-                
-                <div class="header-actions">
-                    <div class="action-buttons">
-                        <button class="action-btn" id="cartBtn">
-                            <i class="fas fa-shopping-bag"></i>
-                            <span class="action-count" id="cartCount">0</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-top">
+        <div class="logo">
+          <i class="fas fa-crown"></i>
+          <span>پوشاک سپهر</span>
         </div>
-    </header>
-
-    <!-- Checkout Page Content -->
-    <section class="checkout-page">
-        <div class="checkout-header">
-            <h1>تکمیل سفارش</h1>
-            <p>لطفاً اطلاعات خود را برای تکمیل خرید وارد کنید</p>
+        <div class="header-actions">
+          <button class="action-btn" id="cartBtn">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="action-count" id="cartCount">0</span>
+          </button>
         </div>
+      </div>
+      <nav class="navbar">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">خانه</a></li>
+          <li><a href="products.html" class="nav-link">محصولات</a></li>
+          <li><a href="products.html?discount=true" class="nav-link">تخفیف‌ها</a></li>
+          <li><a href="about.html" class="nav-link">درباره ما</a></li>
+          <li><a href="contact.html" class="nav-link">تماس با ما</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-        <div class="checkout-content">
-            <!-- Checkout Form -->
-            <div class="checkout-form">
-                <form id="checkoutForm">
-                    <!-- اطلاعات شخصی -->
-                    <div class="form-section">
-                        <h3 class="section-title">اطلاعات شخصی</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstName">نام</label>
-                                <input type="text" id="firstName" name="firstName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastName">نام خانوادگی</label>
-                                <input type="text" id="lastName" name="lastName" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">ایمیل</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">شماره تماس</label>
-                                <input type="tel" id="phone" name="phone" required>
-                            </div>
-                        </div>
-                    </div>
+  <!-- Checkout -->
+  <section class="container" style="margin: 2rem auto;">
+    <div class="checkout-grid">
+      
+      <!-- Customer Info -->
+      <div class="checkout-form">
+        <h2>مشخصات خریدار</h2>
+        <form id="checkoutForm">
+          <div class="form-group">
+            <label for="name">نام و نام خانوادگی</label>
+            <input type="text" id="name" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">شماره تماس</label>
+            <input type="tel" id="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="address">آدرس کامل</label>
+            <textarea id="address" rows="4" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="postal">کد پستی</label>
+            <input type="text" id="postal" required>
+          </div>
+        </form>
+      </div>
 
-                    <!-- آدرس ارسال -->
-                    <div class="form-section">
-                        <h3 class="section-title">آدرس ارسال</h3>
-                        <div class="form-group">
-                            <label for="address">آدرس کامل</label>
-                            <textarea id="address" name="address" required placeholder="استان، شهر، خیابان، پلاک، واحد"></textarea>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="postalCode">کد پستی</label>
-                                <input type="text" id="postalCode" name="postalCode" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="city">شهر</label>
-                                <select id="city" name="city" required>
-                                    <option value="">انتخاب شهر</option>
-                                    <option value="tehran">تهران</option>
-                                    <option value="mashhad">مشهد</option>
-                                    <option value="isfahan">اصفهان</option>
-                                    <option value="shiraz">شیراز</option>
-                                    <option value="kermanshah">کرمانشاه</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- روش پرداخت -->
-                    <div class="form-section">
-                        <h3 class="section-title">روش پرداخت</h3>
-                        <div class="form-group">
-                            <label>
-                                <input type="radio" name="payment" value="online" checked>
-                                پرداخت آنلاین
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <label>
-                                <input type="radio" name="payment" value="cash">
-                                پرداخت در محل
-                            </label>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            <!-- Order Summary -->
-            <div class="checkout-summary">
-                <h3 style="margin-bottom: 20px; color: #2d3748;">خلاصه سفارش</h3>
-                
-                <div class="order-items" id="orderItems">
-                    <!-- آیتم‌های سبد خرید -->
-                </div>
-
-                <div class="order-totals">
-                    <div class="total-row">
-                        <span>جمع کل:</span>
-                        <span id="subtotal">0 تومان</span>
-                    </div>
-                    <div class="total-row">
-                        <span>هزینه ارسال:</span>
-                        <span id="shippingCost">170,000 تومان</span>
-                    </div>
-                    <div class="total-row final">
-                        <span>مبلغ قابل پرداخت:</span>
-                        <span id="totalAmount">0 تومان</span>
-                    </div>
-                </div>
-
-                <button type="button" class="complete-order" onclick="completeOrder()">
-                    <i class="fas fa-lock"></i>
-                    تکمیل سفارش و پرداخت
-                </button>
-            </div>
+      <!-- Order Summary -->
+      <div class="checkout-summary">
+        <h2>خلاصه سفارش</h2>
+        <div id="orderItems"></div>
+        <div class="order-total">
+          جمع کل: <span id="orderTotal">0 تومان</span>
         </div>
-    </section>
+        <button class="btn btn-primary" id="payBtn">ثبت سفارش و پرداخت</button>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        // مدیریت صفحه پرداخت
-        class CheckoutManager {
-            constructor() {
-                this.cart = [];
-                this.shippingCost = 170000;
-                this.init();
-            }
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <i class="fas fa-crown"></i>
+            <span>پوشاک سپهر</span>
+          </div>
+          <p>۵ سال تجربه در عرضه پوشاک باکیفیت</p>
+        </div>
+        <div class="footer-section">
+          <h3>ارتباط</h3>
+          <p><i class="fas fa-phone"></i> 09184740946</p>
+          <p><i class="fas fa-envelope"></i> sepehrkur@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-            init() {
-                this.loadCart();
-                this.updateOrderSummary();
-            }
+  <!-- Cart Sidebar -->
+  <aside id="cartSidebar" class="cart-sidebar">
+    <div class="cart-header">
+      <h3>🛒 سبد خرید</h3>
+      <button id="closeCart"><i class="fas fa-times"></i></button>
+    </div>
+    <div id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        جمع کل: <span id="cartTotal">0 تومان</span>
+      </div>
+      <button class="btn btn-primary" onclick="window.location.href='checkout.html'">تکمیل خرید</button>
+    </div>
+  </aside>
 
-            loadCart() {
-                this.cart = JSON.parse(localStorage.getItem('sepahr_cart') || '[]');
-            }
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const orderItemsContainer = document.getElementById("orderItems");
+      const orderTotalElement = document.getElementById("orderTotal");
 
-            updateOrderSummary() {
-                this.updateOrderItems();
-                this.updateOrderTotals();
-            }
+      const cart = JSON.parse(localStorage.getItem("sepahr_cart") || "[]");
 
-            updateOrderItems() {
-                const container = document.getElementById('orderItems');
-                
-                if (this.cart.length === 0) {
-                    container.innerHTML = '<p>سبد خرید شما خالی است</p>';
-                    return;
-                }
+      if (cart.length === 0) {
+        orderItemsContainer.innerHTML = `<p style="text-align:center;color:#e53e3e;">سبد خرید خالی است</p>`;
+        return;
+      }
 
-                container.innerHTML = this.cart.map(item => `
-                    <div class="order-item">
-                        <div class="item-image">
-                            <img src="${item.image}" alt="${item.name}">
-                        </div>
-                        <div class="item-details">
-                            <div class="item-name">${item.name}</div>
-                            <div class="item-price">${this.formatPrice(item.price)} تومان</div>
-                        </div>
-                        <div class="item-quantity">${item.quantity} عدد</div>
-                    </div>
-                `).join('');
-            }
+      let total = 0;
+      orderItemsContainer.innerHTML = cart.map(item => {
+        total += item.price * item.quantity;
+        return `
+          <div class="order-item">
+            <span>${item.name} (${item.quantity} عدد)</span>
+            <span>${formatPrice(item.price * item.quantity)} تومان</span>
+          </div>
+        `;
+      }).join("");
 
-            updateOrderTotals() {
-                const subtotal = this.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-                const total = subtotal + this.shippingCost;
+      orderTotalElement.textContent = `${formatPrice(total)} تومان`;
 
-                document.getElementById('subtotal').textContent = this.formatPrice(subtotal) + ' تومان';
-                document.getElementById('totalAmount').textContent = this.formatPrice(total) + ' تومان';
-            }
+      document.getElementById("payBtn").addEventListener("click", () => {
+        const name = document.getElementById("name").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const address = document.getElementById("address").value.trim();
+        const postal = document.getElementById("postal").value.trim();
 
-            formatPrice(price) {
-                return new Intl.NumberFormat('fa-IR').format(price);
-            }
-
-            validateForm() {
-                const form = document.getElementById('checkoutForm');
-                const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
-                
-                for (let input of inputs) {
-                    if (!input.value.trim()) {
-                        alert('لطفاً تمام فیلدهای ضروری را پر کنید');
-                        input.focus();
-                        return false;
-                    }
-                }
-
-                // اعتبارسنجی ایمیل
-                const email = document.getElementById('email').value;
-                if (!this.isValidEmail(email)) {
-                    alert('لطفاً یک ایمیل معتبر وارد کنید');
-                    return false;
-                }
-
-                // اعتبارسنجی شماره تماس
-                const phone = document.getElementById('phone').value;
-                if (!this.isValidPhone(phone)) {
-                    alert('لطفاً یک شماره تماس معتبر وارد کنید');
-                    return false;
-                }
-
-                return true;
-            }
-
-            isValidEmail(email) {
-                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return re.test(email);
-            }
-
-            isValidPhone(phone) {
-                const re = /^09[0-9]{9}$/;
-                return re.test(phone);
-            }
-
-            completeOrder() {
-                if (!this.validateForm()) return;
-
-                if (this.cart.length === 0) {
-                    alert('سبد خرید شما خالی است');
-                    return;
-                }
-
-                // ذخیره سفارش
-                const order = {
-                    id: Date.now(),
-                    date: new Date().toLocaleString('fa-IR'),
-                    customer: {
-                        firstName: document.getElementById('firstName').value,
-                        lastName: document.getElementById('lastName').value,
-                        email: document.getElementById('email').value,
-                        phone: document.getElementById('phone').value,
-                        address: document.getElementById('address').value,
-                        city: document.getElementById('city').value,
-                        postalCode: document.getElementById('postalCode').value
-                    },
-                    items: this.cart,
-                    payment: document.querySelector('input[name="payment"]:checked').value,
-                    subtotal: this.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0),
-                    shippingCost: this.shippingCost,
-                    total: this.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0) + this.shippingCost,
-                    status: 'pending'
-                };
-
-                // ذخیره سفارش در localStorage
-                let orders = JSON.parse(localStorage.getItem('sepahr_orders') || '[]');
-                orders.push(order);
-                localStorage.setItem('sepahr_orders', JSON.stringify(orders));
-
-                // پاک کردن سبد خرید
-                localStorage.removeItem('sepahr_cart');
-                this.cart = [];
-
-                // نمایش پیام موفقیت
-                alert('سفارش شما با موفقیت ثبت شد! شماره سفارش: ' + order.id);
-                
-                // انتقال به صفحه اصلی
-                window.location.href = 'index.html';
-            }
+        if (!name || !phone || !address || !postal) {
+          alert("لطفاً همه فیلدها را پر کنید");
+          return;
         }
 
-        // راه‌اندازی صفحه
-        document.addEventListener('DOMContentLoaded', () => {
-            window.checkoutManager = new CheckoutManager();
-        });
+        alert("✅ سفارش شما با موفقیت ثبت شد!\n(شبیه‌سازی پرداخت)");
+        localStorage.removeItem("sepahr_cart");
+        window.location.href = "index.html";
+      });
+    });
+  </script>
 
-        function completeOrder() {
-            if (window.checkoutManager) {
-                window.checkoutManager.completeOrder();
-            }
-        }
-
-        // به‌روزرسانی شمارنده سبد خرید
-        function updateCartCounter() {
-            const cart = JSON.parse(localStorage.getItem('sepahr_cart') || '[]');
-            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-            const cartCount = document.getElementById('cartCount');
-            
-            if (cartCount) {
-                cartCount.textContent = totalItems;
-                cartCount.style.display = totalItems > 0 ? 'flex' : 'none';
-            }
-        }
-
-        // بارگذاری اولیه
-        updateCartCounter();
-    </script>
 </body>
 </html>
