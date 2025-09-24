@@ -1,573 +1,126 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>محصولات - پوشاک سپهر</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        .products-page {
-            padding: 100px 0 50px;
-            background: #f8fafc;
-            min-height: 100vh;
-        }
-
-        .page-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .page-header h1 {
-            font-size: 2.5rem;
-            color: #2d3748;
-            margin-bottom: 1rem;
-        }
-
-        .breadcrumb {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            color: #718096;
-        }
-
-        .breadcrumb a {
-            color: #667eea;
-            text-decoration: none;
-        }
-
-        .products-content {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .products-sidebar {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            height: fit-content;
-            position: sticky;
-            top: 120px;
-        }
-
-        .filter-group {
-            margin-bottom: 30px;
-        }
-
-        .filter-group h4 {
-            color: #2d3748;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        .filter-option {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-            cursor: pointer;
-        }
-
-        .filter-option input {
-            width: auto;
-        }
-
-        .price-range {
-            margin-top: 15px;
-        }
-
-        .range-values {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            color: #718096;
-        }
-
-        .range-slider {
-            width: 100%;
-        }
-
-        .products-main {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .products-toolbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #f1f5f9;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .product-card {
-            background: #f8fafc;
-            border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            border-color: #667eea;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .product-image {
-            height: 250px;
-            overflow: hidden;
-        }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .product-card:hover .product-image img {
-            transform: scale(1.1);
-        }
-
-        .product-content {
-            padding: 20px;
-        }
-
-        .product-title {
-            font-size: 1.2rem;
-            color: #2d3748;
-            margin-bottom: 10px;
-        }
-
-        .product-category {
-            color: #718096;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        } 
-
-        .product-price {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-
-        .current-price {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #e91e63;
-        }
-
-        .old-price {
-            text-decoration: line-through;
-            color: #a0aec0;
-        }
-
-        .add-to-cart {
-            width: 100%;
-            padding: 12px;
-            background: #667eea;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            font-family: Vazirmatn;
-        }
-
-        .add-to-cart:hover {
-            background: #5a6fd8;
-        }
-
-        .product-badges {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            z-index: 2;
-        }
-
-        .badge {
-            padding: 5px 10px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            color: white;
-        }
-
-        .badge-new {
-            background: #48bb78;
-        }
-
-        .badge-discount {
-            background: #e53e3e;
-        }
-
-        .badge-hot {
-            background: #ed8936;
-        }
-
-        @media (max-width: 968px) {
-            .products-content {
-                grid-template-columns: 1fr;
-            }
-            .products-sidebar {
-                position: static;
-            }
-            .products-page {
-                padding: 80px 0 30px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>محصولات | پوشاک سپهر</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/products.js"></script>
+  <script defer src="js/script.js"></script>
+  <script defer src="js/product-loader.js"></script>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-top">
-                <div class="logo">
-                    <i class="fas fa-crown"></i>
-                    <span>پوشاک سپهر</span>
-                </div>
-                
-                <div class="header-actions">
-                    <div class="search-box">
-                        <input type="text" placeholder="جستجوی محصولات..." id="searchInput">
-                        <button class="search-btn"><i class="fas fa-search"></i></button>
-                    </div>
-                    
-                    <div class="action-buttons">
-                        <button class="action-btn" id="cartBtn">
-                            <i class="fas fa-shopping-bag"></i>
-                            <span class="action-count" id="cartCount">0</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
 
-            <nav class="navbar">
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">خانه</a></li>
-                    <li><a href="products.html" class="nav-link active">محصولات</a></li>
-                    <li><a href="about.html" class="nav-link">درباره ما</a></li>
-                    <li><a href="contact.html" class="nav-link">تماس با ما</a></li>
-                </ul>
-            </nav>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-top">
+        <div class="logo">
+          <i class="fas fa-crown"></i>
+          <span>پوشاک سپهر</span>
         </div>
-    </header>
-
-    <!-- Products Page Content -->
-    <section class="products-page">
-        <div class="page-header">
-            <h1 id="pageTitle">همه محصولات</h1>
-            <div class="breadcrumb">
-                <a href="index.html">خانه</a>
-                <i class="fas fa-chevron-left"></i>
-                <span>محصولات</span>
-            </div>
+        <div class="header-actions">
+          <div class="search-box">
+            <input type="text" placeholder="جستجوی محصولات..." id="searchInput">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+            <div class="search-results" id="searchResults"></div>
+          </div>
+          <div class="action-buttons">
+            <button class="action-btn" id="cartBtn">
+              <i class="fas fa-shopping-bag"></i>
+              <span class="action-count" id="cartCount">0</span>
+            </button>
+          </div>
         </div>
+      </div>
+      <nav class="navbar">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">خانه</a></li>
+          <li><a href="products.html" class="nav-link active">محصولات</a></li>
+          <li><a href="products.html?discount=true" class="nav-link">تخفیف‌ها</a></li>
+          <li><a href="about.html" class="nav-link">درباره ما</a></li>
+          <li><a href="contact.html" class="nav-link">تماس با ما</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-        <div class="products-content">
-            <!-- Sidebar Filters -->
-            <aside class="products-sidebar">
-                <div class="filter-group">
-                    <h4>دسته‌بندی</h4>
-                    <div class="filter-options">
-                        <label class="filter-option">
-                            <input type="radio" name="category" value="all" checked>
-                            همه محصولات
-                        </label>
-                        <label class="filter-option">
-                            <input type="radio" name="category" value="دخترانه">
-                            پوشاک دخترانه
-                        </label>
-                        <label class="filter-option">
-                            <input type="radio" name="category" value="پسرانه">
-                            پوشاک پسرانه
-                        </label>
-                        <label class="filter-option">
-                            <input type="radio" name="category" value="نوزادی">
-                            پوشاک نوزادی
-                        </label>
-                        <label class="filter-option">
-                            <input type="radio" name="category" value="اکسسوری">
-                            اکسسوری
-                        </label>
-                    </div>
-                </div>
+  <!-- Filters -->
+  <section class="filters container">
+    <div class="filter-bar">
+      <div class="filter-group">
+        <label for="categoryFilter">دسته‌بندی:</label>
+        <select id="categoryFilter">
+          <option value="all">همه</option>
+          <option value="پسرانه">پسرانه</option>
+          <option value="دخترانه">دخترانه</option>
+          <option value="نوزاد">نوزاد</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="sortFilter">مرتب‌سازی:</label>
+        <select id="sortFilter">
+          <option value="latest">جدیدترین</option>
+          <option value="priceLow">ارزان‌ترین</option>
+          <option value="priceHigh">گران‌ترین</option>
+          <option value="discount">بیشترین تخفیف</option>
+        </select>
+      </div>
+    </div>
+  </section>
 
-                <div class="filter-group">
-                    <h4>محدوده قیمت</h4>
-                    <div class="price-range">
-                        <div class="range-values">
-                            <span id="minPrice">0</span>
-                            <span id="maxPrice">2,000,000 تومان</span>
-                        </div>
-                        <input type="range" min="0" max="2000000" value="2000000" class="range-slider" id="priceSlider">
-                    </div>
-                </div>
+  <!-- Products -->
+  <section class="container">
+    <div class="products-grid" id="allProducts">
+      <!-- محصولات با جاوااسکریپت لود می‌شن -->
+    </div>
+  </section>
 
-                <div class="filter-group">
-                    <label class="filter-option">
-                        <input type="checkbox" id="discountFilter">
-                        فقط محصولات تخفیف‌دار
-                    </label>
-                </div>
-
-                <button class="add-to-cart" onclick="applyFilters()" style="margin-top: 20px; width: 100%;">
-                    اعمال فیلترها
-                </button>
-            </aside>
-
-            <!-- Products Grid -->
-            <main class="products-main">
-                <div class="products-toolbar">
-                    <div class="toolbar-left">
-                        <span id="productsCount">در حال بارگذاری...</span>
-                    </div>
-                    <div class="toolbar-right">
-                        <select id="sortSelect" onchange="sortProducts()">
-                            <option value="newest">جدیدترین</option>
-                            <option value="price-low">قیمت: کم به زیاد</option>
-                            <option value="price-high">قیمت: زیاد به کم</option>
-                            <option value="discount">بیشترین تخفیف</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="products-grid" id="productsGrid">
-                    <!-- محصولات اینجا لود می‌شوند -->
-                </div>
-            </main>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <i class="fas fa-crown"></i>
+            <span>پوشاک سپهر</span>
+          </div>
+          <p>۵ سال تجربه در عرضه پوشاک باکیفیت</p>
         </div>
-    </section>
+        <div class="footer-section">
+          <h3>لینک‌های سریع</h3>
+          <ul>
+            <li><a href="index.html">خانه</a></li>
+            <li><a href="products.html">محصولات</a></li>
+            <li><a href="about.html">درباره ما</a></li>
+            <li><a href="contact.html">تماس با ما</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>ارتباط</h3>
+          <p><i class="fas fa-phone"></i> 09184740946</p>
+          <p><i class="fas fa-envelope"></i> sepehrkur@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-    <script>
-        let allProducts = [];
-        let filteredProducts = [];
+  <!-- Cart Sidebar -->
+  <aside id="cartSidebar" class="cart-sidebar">
+    <div class="cart-header">
+      <h3>🛒 سبد خرید</h3>
+      <button id="closeCart"><i class="fas fa-times"></i></button>
+    </div>
+    <div id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        جمع کل: <span id="cartTotal">0 تومان</span>
+      </div>
+      <button class="btn btn-primary" onclick="window.location.href='checkout.html'">تکمیل خرید</button>
+    </div>
+  </aside>
 
-        // بارگذاری محصولات از GitHub و localStorage
-        async function loadProducts() {
-            try {
-                // اول از GitHub试试
-                const response = await fetch('products.json');
-                if (response.ok) {
-                    const data = await response.json();
-                    allProducts = data.products || [];
-                    console.log('محصولات از GitHub بارگذاری شد:', allProducts.length);
-                }
-            } catch (error) {
-                console.log('بارگذاری از GitHub شکست خورد، استفاده از localStorage...');
-            }
-
-            // اگر GitHub کار نکرد، از localStorage
-            if (allProducts.length === 0) {
-                const savedProducts = localStorage.getItem('sepahr_products');
-                allProducts = savedProducts ? JSON.parse(savedProducts) : [];
-                console.log('محصولات از localStorage بارگذاری شد:', allProducts.length);
-            }
-
-            filteredProducts = [...allProducts];
-            displayProducts();
-            updateProductsCount();
-            updatePriceSlider();
-        }
-
-        // نمایش محصولات
-        function displayProducts() {
-            const grid = document.getElementById('productsGrid');
-            
-            if (filteredProducts.length === 0) {
-                grid.innerHTML = `
-                    <div style="grid-column: 1/-1; text-align: center; padding: 50px;">
-                        <i class="fas fa-search" style="font-size: 3rem; color: #a0aec0; margin-bottom: 20px;"></i>
-                        <h3 style="color: #718096;">محصولی یافت نشد</h3>
-                        <p style="color: #a0aec0;">با تغییر فیلترها دوباره امتحان کنید</p>
-                    </div>
-                `;
-                return;
-            }
-
-            grid.innerHTML = filteredProducts.map(product => `
-                <div class="product-card" style="position: relative;">
-                    <div class="product-badges">
-                        ${product.isNew ? '<span class="badge badge-new">جدید</span>' : ''}
-                        ${product.discount ? `<span class="badge badge-discount">${product.discount}%</span>` : ''}
-                        ${product.isHot ? '<span class="badge badge-hot">پرفروش</span>' : ''}
-                    </div>
-                    <div class="product-image">
-                        <img src="${product.image || product.images?.[0]}" alt="${product.name}" 
-                             onerror="this.src='https://images.unsplash.com/photo-1558769132-cb1a5c63d3f3?ixlib=rb-4.0.3&w=500&q=80'">
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">${product.name}</h3>
-                        <div class="product-category">${product.category} - ${product.type}</div>
-                        <div class="product-price">
-                            <span class="current-price">${formatPrice(product.price)} تومان</span>
-                            ${product.oldPrice ? `<span class="old-price">${formatPrice(product.oldPrice)} تومان</span>` : ''}
-                        </div>
-                        <button class="add-to-cart" onclick="addToCart(${product.id})">
-                            <i class="fas fa-shopping-cart"></i>
-                            افزودن به سبد خرید
-                        </button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // اعمال فیلترها
-        function applyFilters() {
-            const selectedCategory = document.querySelector('input[name="category"]:checked').value;
-            const priceRange = parseInt(document.getElementById('priceSlider').value);
-            const discountOnly = document.getElementById('discountFilter').checked;
-
-            filteredProducts = allProducts.filter(product => {
-                const categoryMatch = selectedCategory === 'all' || product.category === selectedCategory;
-                const priceMatch = product.price <= priceRange;
-                const discountMatch = !discountOnly || product.discount > 0;
-                
-                return categoryMatch && priceMatch && discountMatch;
-            });
-
-            sortProducts();
-        }
-
-        // مرتب‌سازی محصولات
-        function sortProducts() {
-            const sortBy = document.getElementById('sortSelect').value;
-            
-            filteredProducts.sort((a, b) => {
-                switch (sortBy) {
-                    case 'price-low':
-                        return a.price - b.price;
-                    case 'price-high':
-                        return b.price - a.price;
-                    case 'discount':
-                        return (b.discount || 0) - (a.discount || 0);
-                    case 'newest':
-                    default:
-                        return b.id - a.id;
-                }
-            });
-
-            displayProducts();
-            updateProductsCount();
-        }
-
-        // آپدیت اسلایدر قیمت
-        function updatePriceSlider() {
-            const slider = document.getElementById('priceSlider');
-            const maxPrice = document.getElementById('maxPrice');
-            
-            if (slider && maxPrice) {
-                slider.addEventListener('input', function() {
-                    maxPrice.textContent = formatPrice(this.value) + ' تومان';
-                });
-            }
-        }
-
-        // افزودن به سبد خرید
-        function addToCart(productId) {
-            const product = allProducts.find(p => p.id === productId);
-            if (!product) return;
-
-            let cart = JSON.parse(localStorage.getItem('sepahr_cart') || '[]');
-            const existingItem = cart.find(item => item.id === productId);
-
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({
-                    ...product,
-                    quantity: 1
-                });
-            }
-
-            localStorage.setItem('sepahr_cart', JSON.stringify(cart));
-            updateCartCounter();
-            showNotification('محصول به سبد خرید اضافه شد! ✅');
-        }
-
-        // به‌روزرسانی شمارنده سبد خرید
-        function updateCartCounter() {
-            const cart = JSON.parse(localStorage.getItem('sepahr_cart') || '[]');
-            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-            const cartCount = document.getElementById('cartCount');
-            
-            if (cartCount) {
-                cartCount.textContent = totalItems;
-                cartCount.style.display = totalItems > 0 ? 'flex' : 'none';
-            }
-        }
-
-        // به‌روزرسانی تعداد محصولات
-        function updateProductsCount() {
-            const countElement = document.getElementById('productsCount');
-            if (countElement) {
-                countElement.textContent = `${filteredProducts.length} محصول یافت شد`;
-            }
-        }
-
-        // فرمت قیمت
-        function formatPrice(price) {
-            return new Intl.NumberFormat('fa-IR').format(price);
-        }
-
-        // نمایش نوتیفیکیشن
-        function showNotification(message) {
-            const notification = document.createElement('div');
-            notification.style.cssText = `
-                position: fixed;
-                top: 20px;
-                left: 50%;
-                transform: translateX(-50%);
-                background: #48bb78;
-                color: white;
-                padding: 15px 25px;
-                border-radius: 10px;
-                z-index: 1000;
-                font-family: Vazirmatn;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            `;
-            notification.textContent = message;
-            document.body.appendChild(notification);
-
-            setTimeout(() => {
-                notification.remove();
-            }, 3000);
-        }
-
-        // بارگذاری اولیه
-        document.addEventListener('DOMContentLoaded', function() {
-            loadProducts();
-            updateCartCounter();
-            
-            // تنظیم event listener برای فیلترها
-            document.querySelectorAll('input[name="category"]').forEach(radio => {
-                radio.addEventListener('change', applyFilters);
-            });
-            
-            document.getElementById('discountFilter').addEventListener('change', applyFilters);
-        });
-    </script>
 </body>
 </html>
