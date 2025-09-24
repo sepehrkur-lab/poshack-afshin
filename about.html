@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>درباره ما - پوشاک سپهر</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .about-page {
+            padding: 80px 0 50px;
+            background: #f8fafc;
+            min-height: 100vh;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .about-header h1 {
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .about-header p {
+            font-size: 1.1rem;
+            color: #718096;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .about-section {
+            background: white;
+            margin-bottom: 40px;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            color: #2d3748;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #718096;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .value-item {
+            padding: 30px;
+            background: #f8fafc;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .value-item:hover {
+            transform: translateY(-5px);
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .value-title {
+            font-size: 1.3rem;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+
+        .value-description {
+            color: #718096;
+            line-height: 1.6;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .member-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 5px solid #f1f5f9;
+        }
+
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-name {
+            font-size: 1.3rem;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+
+        .member-role {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .member-bio {
+            color: #718096;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 968px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .about-section {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-page {
+                padding: 60px 0 30px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .about-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <i class="fas fa-crown"></i>
+                    <span>پوشاک سپهر</span>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="جستجوی محصولات..." id="searchInput">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="action-btn" id="cartBtn">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="action-count" id="cartCount">0</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">خانه</a></li>
+                    <li><a href="products.html" class="nav-link">محصولات</a></li>
+                    <li><a href="about.html" class="nav-link active">درباره ما</a></li>
+                    <li><a href="contact.html" class="nav-link">تماس با ما</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Page Content -->
+    <section class="about-page">
+        <div class="about-header">
+            <h1>درباره پوشاک سپهر</h1>
+            <p>۵ سال تجربه در ارائه بهترین پوشاک بچه‌گانه با کیفیت عالی و قیمت مناسب</p>
+        </div>
+
+        <div class="about-content">
+            <!-- داستان ما -->
+            <div class="about-section">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2>داستان ما</h2>
+                        <p>فروشگاه پوشاک سپهر در سال ۱۳۹۸ با هدف ارائه پوشاک با کیفیت و شیک برای کودکان تأسیس شد. ما بر این باوریم که هر کودک سزاوار بهترین‌هاست و پوشاک باید علاوه بر زیبایی، از نظر کیفیت و راحتی نیز استانداردهای بالایی داشته باشد.</p>
+                        <p>از ابتدا تمرکز ما بر روی استفاده از پارچه‌های طبیعی و ضد حساسیت بوده است. تمام محصولات ما با دقت و ظرافت خاصی دوخته می‌شوند تا علاوه بر زیبایی، حداکثر راحتی را برای کودکان عزیز فراهم کنند.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="داستان ما">
+                    </div>
+                </div>
+            </div>
+
+            <!-- آمار و ارقام -->
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">سال تجربه</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5000+</span>
+                    <span class="stat-label">مشتری راضی</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">200+</span>
+                    <span class="stat-label">محصول متنوع</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">رضایت مشتری</span>
+                </div>
+            </div>
+
+            <!-- ماموریت و چشم‌انداز -->
+            <div class="about-section">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="ماموریت ما">
+                    </div>
+                    <div class="about-text">
+                        <h2>ماموریت ما</h2>
+                        <p>ماموریت ما ایجاد لباس‌هایی است که نه تنها از نظر زیبایی و مد روز باشند، بلکه از بالاترین استانداردهای کیفیت و ایمنی نیز برخوردار باشند. ما معتقدیم که پوشاک کودکان باید:</p>
+                        <ul style="color: #718096; line-height: 1.8; margin-right: 20px;">
+                            <li>از پارچه‌های طبیعی و ضد حساسیت ساخته شوند</li>
+                            <li>دارای دوخت با کیفیت و بادوام باشند</li>
+                            <li>از رنگ‌های ثابت و غیرشیمیایی استفاده کنند</li>
+                            <li>متناسب با نیازهای حرکتی کودکان طراحی شوند</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ارزش‌های ما -->
+            <div class="about-section">
+                <h2 style="text-align: center; margin-bottom: 50px; color: #2d3748;">ارزش‌های ما</h2>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3 class="value-title">کیفیت عالی</h3>
+                        <p class="value-description">استفاده از بهترین مواد اولیه و کنترل کیفیت دقیق در تمام مراحل تولید</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="value-title">رضایت مشتری</h3>
+                        <p class="value-description">رضایت شما اولویت اول ماست. تضمین بازگشت وجه در صورت عدم رضایت</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3 class="value-title">پایداری محیطی</h3>
+                        <p class="value-description">استفاده از مواد قابل بازیافت و روش‌های تولید دوستدار محیط زیست</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- تیم ما -->
+            <div class="about-section">
+                <h2 style="text-align: center; margin-bottom: 50px; color: #2d3748;">تیم ما</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="سپهر خرمی">
+                        </div>
+                        <h3 class="member-name">سپهر خرمی</h3>
+                        <div class="member-role">مدیر عامل و مؤسس</div>
+                        <p class="member-bio">با بیش از ۱۰ سال تجربه در صنعت پوشاک، سپهر عاشق ایجاد محصولاتی است که زندگی کودکان را زیباتر کنند.</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="افشین خرمی">
+                        </div>
+                        <h3 class="member-name">افشین خرمی</h3>
+                        <div class="member-role">مدیر فروش</div>
+                        <p class="member-bio">افشین با دانش عمیق خود از بازار، استراتژی‌های فروش مؤثری را برای رضایت حداکثری مشتریان اجرا می‌کند.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-crown"></i>
+                        <span>پوشاک سپهر</span>
+                    </div>
+                    <p>فروشگاه اینترنتی پوشاک سپهر با بیش از 5 سال سابقه در زمینه ارائه پوشاک با کیفیت و قیمت مناسب</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>لینک‌های سریع</h3>
+                    <ul>
+                        <li><a href="index.html">خانه</a></li>
+                        <li><a href="products.html">محصولات</a></li>
+                        <li><a href="about.html">درباره ما</a></li>
+                        <li><a href="contact.html">تماس با ما</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>تماس با ما</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> 09184740946</p>
+                        <p><i class="fas fa-envelope"></i> sepehrkur@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // به‌روزرسانی شمارنده سبد خرید
+        function updateCartCounter() {
+            const cart = JSON.parse(localStorage.getItem('sepahr_cart') || '[]');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const cartCount = document.getElementById('cartCount');
+            
+            if (cartCount) {
+                cartCount.textContent = totalItems;
+                cartCount.style.display = totalItems > 0 ? 'flex' : 'none';
+            }
+        }
+
+        // انیمیشن شماره‌ها
+        function animateNumbers() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent);
+                let count = 0;
+                const increment = target / 100;
+                
+                const updateCount = () => {
+                    if (count < target) {
+                        count += increment;
+                        counter.textContent = Math.ceil(count) + (counter.textContent.includes('+') ? '+' : '');
+                        setTimeout(updateCount, 20);
+                    } else {
+                        counter.textContent = target + (counter.textContent.includes('+') ? '+' : '');
+                    }
+                };
+                
+                updateCount();
+            });
+        }
+
+        // راه‌اندازی انیمیشن هنگام اسکرول
+        window.addEventListener('scroll', function() {
+            const statsSection = document.querySelector('.stats-grid');
+            if (isElementInViewport(statsSection)) {
+                animateNumbers();
+            }
+        });
+
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // بارگذاری اولیه
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCounter();
+        });
+    </script>
+</body>
+</html>
