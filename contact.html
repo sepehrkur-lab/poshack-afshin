@@ -1,482 +1,114 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تماس با ما - پوشاک سپهر</title>
-        <link rel="stylesheet" href="css/style.css">
-    <style>
-        .contact-page {
-            padding: 80px 0 50px;
-            background: #f8fafc;
-            min-height: 100vh;
-        }
-
-        .contact-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .contact-header h1 {
-            font-size: 2.5rem;
-            color: #2d3748;
-            margin-bottom: 1rem;
-        }
-
-        .contact-header p {
-            font-size: 1.1rem;
-            color: #718096;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .contact-info {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-            padding: 20px;
-            background: #f8fafc;
-            border-radius: 15px;
-            transition: transform 0.3s ease;
-        }
-
-        .contact-item:hover {
-            transform: translateX(-10px);
-        }
-
-        .contact-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: 20px;
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        .contact-details h3 {
-            color: #2d3748;
-            margin-bottom: 5px;
-            font-size: 1.2rem;
-        }
-
-        .contact-details p {
-            color: #718096;
-            margin: 0;
-        }
-
-        .phone-number {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #e91e63;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .phone-number:hover {
-            color: #c2185b;
-        }
-
-        .contact-form {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #2d3748;
-            font-weight: 600;
-            font-size: 1rem;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            font-size: 1rem;
-            font-family: 'Vazirmatn', sans-serif;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
-        }
-
-        .map-container {
-            margin-top: 50px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            grid-column: 1 / -1;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 30px;
-        }
-
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            text-decoration: none;
-            transition: transform 0.3s ease;
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        .social-links a:hover {
-            transform: translateY(-3px);
-        }
-
-        .whatsapp { background: #25D366; }
-        .telegram { background: #0088cc; }
-        .instagram { 
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-        }
-
-        @media (max-width: 968px) {
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .contact-header h1 {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .contact-page {
-                padding: 60px 0 30px;
-            }
-            
-            .contact-info,
-            .contact-form {
-                padding: 30px 20px;
-            }
-            
-            .contact-item {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .contact-icon {
-                margin-left: 0;
-                margin-bottom: 15px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تماس با ما | پوشاک سپهر</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/script.js"></script>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-top">
-                <div class="logo">
-                    <i class="fas fa-crown"></i>
-                    <span>پوشاک سپهر</span>
-                </div>
-                
-                <div class="header-actions">
-                    <div class="search-box">
-                        <input type="text" placeholder="جستجوی محصولات..." id="searchInput">
-                        <button class="search-btn"><i class="fas fa-search"></i></button>
-                    </div>
-                    
-                    <div class="action-buttons">
-                        <button class="action-btn" id="cartBtn">
-                            <i class="fas fa-shopping-bag"></i>
-                            <span class="action-count" id="cartCount">0</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
 
-            <nav class="navbar">
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">خانه</a></li>
-                    <li><a href="products.html" class="nav-link">محصولات</a></li>
-                    <li><a href="about.html" class="nav-link">درباره ما</a></li>
-                    <li><a href="contact.html" class="nav-link active">تماس با ما</a></li>
-                </ul>
-            </nav>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-top">
+        <div class="logo">
+          <i class="fas fa-crown"></i>
+          <span>پوشاک سپهر</span>
         </div>
-    </header>
-
-    <!-- Contact Page Content -->
-    <section class="contact-page">
-        <div class="contact-header">
-            <h1>تماس با پوشاک سپهر</h1>
-            <p>ما همیشه آماده پاسخگویی به سوالات و پیشنهادات شما هستیم</p>
+        <div class="header-actions">
+          <button class="action-btn" id="cartBtn">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="action-count" id="cartCount">0</span>
+          </button>
         </div>
+      </div>
+      <nav class="navbar">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">خانه</a></li>
+          <li><a href="products.html" class="nav-link">محصولات</a></li>
+          <li><a href="about.html" class="nav-link">درباره ما</a></li>
+          <li><a href="contact.html" class="nav-link active">تماس با ما</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-        <div class="contact-content">
-            <!-- Contact Information -->
-            <div class="contact-info">
-                <h2 style="color: #2d3748; margin-bottom: 30px; text-align: center;">اطلاعات تماس</h2>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>شماره تماس</h3>
-                        <p class="phone-number" onclick="copyToClipboard('09184740946')">09184740946</p>
-                        <small style="color: #718096;">(برای کپی کردن کلیک کنید)</small>
-                    </div>
-                </div>
+  <!-- Contact Section -->
+  <section class="container" style="margin: 2rem auto;">
+    <div class="contact-section">
+      <h1>تماس با ما</h1>
+      <p>برای ارتباط با ما می‌توانید از راه‌های زیر اقدام کنید:</p>
 
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>آدرس ایمیل</h3>
-                        <p>sepehrkur@gmail.com</p>
-                    </div>
-                </div>
+      <div class="contact-info">
+        <p><i class="fas fa-phone"></i> تلفن: 09184740946</p>
+        <p><i class="fas fa-envelope"></i> ایمیل: sepehrkur@gmail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> آدرس: تهران، خیابان مثال، پلاک ۱۲۳</p>
+      </div>
 
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>آدرس فروشگاه</h3>
-                        <p>استان کرمانشاه، شهر روانسر، مجتمع ستاره اورامان، راهروی شماره 5، پوشاک افشین</p>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>ساعات کاری</h3>
-                        <p>شنبه تا پنجشنبه: ۸:۰۰ صبح تا ۱۰:۰۰ شب<br>جمعه‌ها: ۱۰:۰۰ صبح تا ۶:۰۰ عصر</p>
-                    </div>
-                </div>
-
-                <div class="social-links">
-                    <a href="https://wa.me/989184740946" class="whatsapp" target="_blank">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="https://t.me/sepehrkur" class="telegram" target="_blank">
-                        <i class="fab fa-telegram"></i>
-                    </a>
-                    <a href="https://instagram.com" class="instagram" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Contact Form -->
-            <div class="contact-form">
-                <h2 style="color: #2d3748; margin-bottom: 30px; text-align: center;">فرم تماس با ما</h2>
-                
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">نام کامل</label>
-                        <input type="text" id="name" name="name" required placeholder="نام و نام خانوادگی خود را وارد کنید">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">آدرس ایمیل</label>
-                        <input type="email" id="email" name="email" required placeholder="example@gmail.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">شماره تماس</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="09xxxxxxxxx">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="subject">موضوع</label>
-                        <select id="subject" name="subject" required>
-                            <option value="">انتخاب موضوع</option>
-                            <option value="پیشنهاد">پیشنهاد</option>
-                            <option value="انتقاد">انتقاد</option>
-                            <option value="پشتیبانی">پشتیبانی فنی</option>
-                            <option value="همکاری">درخواست همکاری</option>
-                            <option value="سایر">سایر</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">پیام شما</label>
-                        <textarea id="message" name="message" required placeholder="متن پیام خود را اینجا بنویسید..."></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i>
-                        ارسال پیام
-                    </button>
-                </form>
-            </div>
+      <form id="contactForm" class="contact-form">
+        <div class="form-group">
+          <label for="fullname">نام و نام خانوادگی</label>
+          <input type="text" id="fullname" required>
         </div>
-
-        <!-- Map Section -->
-        <div class="container">
-            <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3227.325123456789!2d47.12345678901234!3d34.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDA3JzI0LjQiTiA0N8KwMDcnMzYuOCJF!5e0!3m2!1sen!2sir!4v1234567890123!5m2!1sen!2sir" 
-                    width="100%" 
-                    height="400" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
+        <div class="form-group">
+          <label for="email">ایمیل</label>
+          <input type="email" id="email" required>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <i class="fas fa-crown"></i>
-                        <span>پوشاک سپهر</span>
-                    </div>
-                    <p>فروشگاه اینترنتی پوشاک سپهر با بیش از 5 سال سابقه در زمینه ارائه پوشاک با کیفیت و قیمت مناسب</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>لینک‌های سریع</h3>
-                    <ul>
-                        <li><a href="index.html">خانه</a></li>
-                        <li><a href="products.html">محصولات</a></li>
-                        <li><a href="about.html">درباره ما</a></li>
-                        <li><a href="contact.html">تماس با ما</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>تماس با ما</h3>
-                    <div class="contact-info">
-                        <p><i class="fas fa-phone"></i> 09184740946</p>
-                        <p><i class="fas fa-envelope"></i> sepehrkur@gmail.com</p>
-                    </div>
-                </div>
-            </div>
+        <div class="form-group">
+          <label for="message">پیام</label>
+          <textarea id="message" rows="5" required></textarea>
         </div>
-    </footer>
+        <button type="submit" class="btn btn-primary">ارسال پیام</button>
+      </form>
+    </div>
+  </section>
 
-    <script>
-        // مدیریت فرم تماس
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value,
-                date: new Date().toLocaleString('fa-IR')
-            };
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <i class="fas fa-crown"></i>
+            <span>پوشاک سپهر</span>
+          </div>
+          <p>۵ سال تجربه در عرضه پوشاک باکیفیت</p>
+        </div>
+        <div class="footer-section">
+          <h3>ارتباط</h3>
+          <p><i class="fas fa-phone"></i> 09184740946</p>
+          <p><i class="fas fa-envelope"></i> sepehrkur@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-            // ذخیره در localStorage
-            let contacts = JSON.parse(localStorage.getItem('sepahr_contacts') || '[]');
-            contacts.push(formData);
-            localStorage.setItem('sepahr_contacts', JSON.stringify(contacts));
+  <!-- Cart Sidebar -->
+  <aside id="cartSidebar" class="cart-sidebar">
+    <div class="cart-header">
+      <h3>🛒 سبد خرید</h3>
+      <button id="closeCart"><i class="fas fa-times"></i></button>
+    </div>
+    <div id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        جمع کل: <span id="cartTotal">0 تومان</span>
+      </div>
+      <button class="btn btn-primary" onclick="window.location.href='checkout.html'">تکمیل خرید</button>
+    </div>
+  </aside>
 
-            // نمایش پیام موفقیت
-            alert('پیام شما با موفقیت ارسال شد. در اسرع وقت با شما تماس خواهیم گرفت.');
-            
-            // ریست فرم
-            this.reset();
-        });
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", e => {
+      e.preventDefault();
+      alert("✅ پیام شما با موفقیت ارسال شد!");
+      e.target.reset();
+    });
+  </script>
 
-        // کپی شماره تلفن
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                alert('شماره تلفن کپی شد: ' + text);
-            }).catch(err => {
-                console.error('خطا در کپی کردن: ', err);
-            });
-        }
-
-        // به‌روزرسانی شمارنده سبد خرید
-        function updateCartCounter() {
-            const cart = JSON.parse(localStorage.getItem('sepahr_cart') || '[]');
-            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-            const cartCount = document.getElementById('cartCount');
-            
-            if (cartCount) {
-                cartCount.textContent = totalItems;
-                cartCount.style.display = totalItems > 0 ? 'flex' : 'none';
-            }
-        }
-
-        // بارگذاری اولیه
-        document.addEventListener('DOMContentLoaded', function() {
-            updateCartCounter();
-        });
-    </script>
 </body>
 </html>
-
