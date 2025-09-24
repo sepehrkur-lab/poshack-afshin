@@ -159,3 +159,4 @@ function searchProducts(query) {
         (product.tags && product.tags.some(tag => tag.toLowerCase().includes(lowerQuery)))
     );
 }
+
