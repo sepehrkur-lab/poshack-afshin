@@ -4,111 +4,128 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>تماس با ما | پوشاک سپهر</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script defer src="js/script.js"></script>
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- 🔝 Header -->
   <header class="header">
-    <div class="container">
-      <div class="header-top">
-        <div class="logo">
-          <i class="fas fa-crown"></i>
-          <span>پوشاک سپهر</span>
-        </div>
-        <div class="header-actions">
-          <button class="action-btn" id="cartBtn">
-            <i class="fas fa-shopping-bag"></i>
-            <span class="action-count" id="cartCount">0</span>
-          </button>
-        </div>
+    <div class="header-top">
+      <div class="logo">
+        <i class="fas fa-crown"></i>
+        <span>پوشاک سپهر</span>
       </div>
-      <nav class="navbar">
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">خانه</a></li>
-          <li><a href="products.html" class="nav-link">محصولات</a></li>
-          <li><a href="about.html" class="nav-link">درباره ما</a></li>
-          <li><a href="contact.html" class="nav-link active">تماس با ما</a></li>
-        </ul>
-      </nav>
+      <div class="header-actions">
+        <button id="cartBtn" class="btn btn-outline">
+          <i class="fas fa-shopping-bag"></i>
+          <span id="cartCount">0</span>
+        </button>
+      </div>
     </div>
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">خانه</a></li>
+        <li><a href="products.html" class="nav-link">محصولات</a></li>
+        <li><a href="about.html" class="nav-link">درباره ما</a></li>
+        <li><a href="contact.html" class="nav-link active">تماس با ما</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Contact Section -->
-  <section class="container" style="margin: 2rem auto;">
-    <div class="contact-section">
-      <h1>تماس با ما</h1>
-      <p>برای ارتباط با ما می‌توانید از راه‌های زیر اقدام کنید:</p>
-
-      <div class="contact-info">
+  <!-- 📌 Contact Section -->
+  <section class="container" style="margin:2rem 0">
+    <h1 style="margin-bottom:1.5rem">تماس با ما</h1>
+    <div style="display:flex;flex-wrap:wrap;gap:2rem;align-items:flex-start">
+      
+      <!-- 📞 اطلاعات تماس -->
+      <div style="flex:1;min-width:280px">
+        <h2>اطلاعات فروشگاه</h2>
+        <p><i class="fas fa-map-marker-alt"></i> آدرس: تهران، خیابان آزادی</p>
         <p><i class="fas fa-phone"></i> تلفن: 09184740946</p>
         <p><i class="fas fa-envelope"></i> ایمیل: sepehrkur@gmail.com</p>
-        <p><i class="fas fa-map-marker-alt"></i> آدرس: تهران، خیابان مثال، پلاک ۱۲۳</p>
+        <p><i class="fas fa-clock"></i> ساعات کاری: ۹ صبح تا ۹ شب</p>
+        <div style="margin-top:1rem;display:flex;gap:1rem">
+          <a href="#" class="btn btn-outline"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="btn btn-outline"><i class="fab fa-telegram"></i></a>
+          <a href="#" class="btn btn-outline"><i class="fab fa-whatsapp"></i></a>
+        </div>
       </div>
 
-      <form id="contactForm" class="contact-form">
-        <div class="form-group">
-          <label for="fullname">نام و نام خانوادگی</label>
-          <input type="text" id="fullname" required>
-        </div>
-        <div class="form-group">
-          <label for="email">ایمیل</label>
-          <input type="email" id="email" required>
-        </div>
-        <div class="form-group">
-          <label for="message">پیام</label>
-          <textarea id="message" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">ارسال پیام</button>
-      </form>
+      <!-- 📝 فرم تماس -->
+      <div style="flex:1;min-width:280px">
+        <h2>فرم تماس</h2>
+        <form id="contactForm" class="checkout-form">
+          <label>نام</label>
+          <input type="text" required>
+          
+          <label>ایمیل</label>
+          <input type="email" required>
+
+          <label>پیام</label>
+          <textarea required></textarea>
+
+          <button type="submit" class="btn btn-primary" style="margin-top:1rem;width:100%">ارسال پیام</button>
+        </form>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- 🌍 نقشه -->
+  <section class="container" style="margin:2rem 0">
+    <h2>موقعیت فروشگاه</h2>
+    <iframe src="https://maps.google.com/maps?q=tehran&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            width="100%" height="350" style="border-radius:var(--radius);box-shadow:var(--shadow)">
+    </iframe>
+  </section>
+
+  <!-- 👣 Footer -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <div class="footer-logo">
-            <i class="fas fa-crown"></i>
-            <span>پوشاک سپهر</span>
-          </div>
-          <p>۵ سال تجربه در عرضه پوشاک باکیفیت</p>
-        </div>
-        <div class="footer-section">
-          <h3>ارتباط</h3>
-          <p><i class="fas fa-phone"></i> 09184740946</p>
-          <p><i class="fas fa-envelope"></i> sepehrkur@gmail.com</p>
-        </div>
+    <div class="footer-content">
+      <div>
+        <div class="footer-logo"><i class="fas fa-crown"></i> پوشاک سپهر</div>
+        <p>۵ سال تجربه در عرضه پوشاک باکیفیت</p>
+      </div>
+      <div>
+        <h3>لینک‌ها</h3>
+        <ul>
+          <li><a href="index.html">خانه</a></li>
+          <li><a href="products.html">محصولات</a></li>
+          <li><a href="about.html">درباره ما</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>ارتباط</h3>
+        <p><i class="fas fa-phone"></i> 09184740946</p>
+        <p><i class="fas fa-envelope"></i> sepehrkur@gmail.com</p>
       </div>
     </div>
   </footer>
 
-  <!-- Cart Sidebar -->
+  <!-- 🛒 Cart Sidebar -->
   <aside id="cartSidebar" class="cart-sidebar">
     <div class="cart-header">
-      <h3>🛒 سبد خرید</h3>
+      <h3>سبد خرید</h3>
       <button id="closeCart"><i class="fas fa-times"></i></button>
     </div>
-    <div id="cartItems"></div>
+    <div id="cartItems" class="cart-items"></div>
     <div class="cart-footer">
-      <div class="cart-total">
-        جمع کل: <span id="cartTotal">0 تومان</span>
-      </div>
-      <button class="btn btn-primary" onclick="window.location.href='checkout.html'">تکمیل خرید</button>
+      <div>جمع کل: <span id="cartTotal">0 تومان</span></div>
+      <a href="checkout.html" class="btn btn-primary" style="margin-top:1rem;width:100%">تکمیل خرید</a>
     </div>
   </aside>
 
+  <!-- 📜 Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/product-loader.js"></script>
+  <script src="js/script.js"></script>
   <script>
     document.getElementById("contactForm").addEventListener("submit", e => {
       e.preventDefault();
-      alert("✅ پیام شما با موفقیت ارسال شد!");
+      alert("✅ پیام شما با موفقیت ارسال شد. به زودی با شما تماس می‌گیریم.");
       e.target.reset();
     });
   </script>
-
 </body>
 </html>
