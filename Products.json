@@ -1,0 +1,33 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "ست پسرانه طرح سوپرمن",
+      "price": 250000,
+      "oldPrice": 320000,
+      "discount": 22,
+      "category": "پسرانه",
+      "type": "ست",
+      "image": "https://images.unsplash.com/photo-1591047139820-6d573c6ae7a7?ixlib=rb-4.0.3&w=500&q=80",
+      "isNew": true,
+      "isHot": true
+    },
+    {
+      "id": 2,
+      "name": "پیراهن دخترانه صورتی",
+      "price": 180000,
+      "category": "دخترانه", 
+      "type": "پیراهن",
+      "image": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&w=500&q=80",
+      "isNew": true
+    },
+    {
+      "id": 3,
+      "name": "لباس نوزادی طرح خرس",
+      "price": 120000,
+      "category": "نوزادی",
+      "type": "ست نوزادی",
+      "image": "https://images.unsplash.com/photo-1588873281272-14886ba59f0a?ixlib=rb-4.0.3&w=500&q=80"
+    }
+  ]
+}
