@@ -1,16 +1,27 @@
 {
-  "products": [
+  "name": "فروشگاه پوشاک سپهر",
+  "short_name": "پوشاک سپهر",
+  "description": "فروشگاه اینترنتی تخصصی پوشاک بچه‌گانه",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#e91e63",
+  "orientation": "portrait",
+  "icons": [
     {
-      "id": 1,
-      "name": "ست پسرانه طرح سوپرمن",
-      "price": 250000,
-      "oldPrice": 320000,
-      "discount": 22,
-      "category": "پسرانه",
-      "type": "ست",
-      "image": "https://images.unsplash.com/photo-1591047139820-6d573c6ae7a7?ixlib=rb-4.0.3&w=500&q=80",
-      "isNew": true,
-      "isHot": true
+      "src": "icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ]
 }
