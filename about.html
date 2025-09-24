@@ -4,101 +4,111 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>درباره ما | پوشاک سپهر</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script defer src="js/script.js"></script>
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- 🔝 Header -->
   <header class="header">
-    <div class="container">
-      <div class="header-top">
-        <div class="logo">
-          <i class="fas fa-crown"></i>
-          <span>پوشاک سپهر</span>
-        </div>
-        <div class="header-actions">
-          <button class="action-btn" id="cartBtn">
-            <i class="fas fa-shopping-bag"></i>
-            <span class="action-count" id="cartCount">0</span>
-          </button>
-        </div>
+    <div class="header-top">
+      <div class="logo">
+        <i class="fas fa-crown"></i>
+        <span>پوشاک سپهر</span>
       </div>
-      <nav class="navbar">
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">خانه</a></li>
-          <li><a href="products.html" class="nav-link">محصولات</a></li>
-          <li><a href="about.html" class="nav-link active">درباره ما</a></li>
-          <li><a href="contact.html" class="nav-link">تماس با ما</a></li>
-        </ul>
-      </nav>
+      <div class="header-actions">
+        <button id="cartBtn" class="btn btn-outline">
+          <i class="fas fa-shopping-bag"></i>
+          <span id="cartCount">0</span>
+        </button>
+      </div>
     </div>
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">خانه</a></li>
+        <li><a href="products.html" class="nav-link">محصولات</a></li>
+        <li><a href="about.html" class="nav-link active">درباره ما</a></li>
+        <li><a href="contact.html" class="nav-link">تماس با ما</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- About Section -->
-  <section class="container" style="margin: 2rem auto;">
-    <div class="about-section">
-      <h1>درباره پوشاک سپهر</h1>
-      <p>
-        فروشگاه اینترنتی <strong>پوشاک سپهر</strong> از سال ۱۴۰۰ فعالیت خود را با هدف عرضه‌ی پوشاک بچه‌گانه باکیفیت و قیمت مناسب آغاز کرد.
-        ما باور داریم کودکان شایسته‌ی بهترین‌ها هستند؛ به همین دلیل، تلاش می‌کنیم جدیدترین و شیک‌ترین پوشاک را با بهترین جنس و دوخت ارائه کنیم.
-      </p>
-      <p>
-        مهم‌ترین افتخار ما رضایت شما مشتریان عزیز است. ما همواره در تلاشیم تا تجربه‌ای لذت‌بخش از خرید اینترنتی برای شما فراهم کنیم.
-      </p>
-      <div class="about-stats">
-        <div>
-          <h2>+۵۰۰</h2>
-          <p>محصول متنوع</p>
-        </div>
-        <div>
-          <h2>+۵۰۰۰</h2>
-          <p>مشتری راضی</p>
-        </div>
-        <div>
-          <h2>۵ سال</h2>
-          <p>تجربه‌ی فروش</p>
-        </div>
+  <!-- 📖 About Section -->
+  <section class="container" style="margin:2rem 0">
+    <h1 style="margin-bottom:1.5rem">درباره پوشاک سپهر</h1>
+    <div style="display:flex;flex-wrap:wrap;gap:2rem;align-items:center">
+      <div style="flex:1;min-width:280px">
+        <p>
+          فروشگاه پوشاک سپهر با بیش از ۵ سال تجربه در عرضه پوشاک بچه‌گانه، همواره تلاش کرده است
+          بهترین و باکیفیت‌ترین محصولات را با قیمتی مناسب در اختیار مشتریان عزیز قرار دهد.
+        </p>
+        <p style="margin:1rem 0">
+          هدف ما ایجاد تجربه‌ای متفاوت در خرید آنلاین است؛ تجربه‌ای سریع، امن و لذت‌بخش برای
+          خانواده‌ها. ما اعتقاد داریم هر کودک لایق بهترین لباس‌هاست.
+        </p>
+        <ul style="margin-top:1rem">
+          <li>✔️ ارسال سریع به سراسر ایران</li>
+          <li>✔️ ضمانت کیفیت و اصالت کالا</li>
+          <li>✔️ پشتیبانی ۲۴ ساعته</li>
+        </ul>
+      </div>
+      <div style="flex:1;min-width:280px">
+        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80"
+             alt="درباره ما"
+             style="width:100%;border-radius:var(--radius);box-shadow:var(--shadow)">
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- 🌟 Mission Section -->
+  <section class="container" style="margin:3rem 0">
+    <h2 style="margin-bottom:1rem">چشم‌انداز ما</h2>
+    <p>
+      تبدیل شدن به برترین فروشگاه اینترنتی پوشاک بچه‌گانه در ایران و ارائه محصولاتی با کیفیت جهانی
+      و قیمت مناسب.
+    </p>
+  </section>
+
+  <!-- 👣 Footer -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <div class="footer-logo">
-            <i class="fas fa-crown"></i>
-            <span>پوشاک سپهر</span>
-          </div>
-          <p>۵ سال تجربه در عرضه پوشاک باکیفیت</p>
-        </div>
-        <div class="footer-section">
-          <h3>ارتباط</h3>
-          <p><i class="fas fa-phone"></i> 09184740946</p>
-          <p><i class="fas fa-envelope"></i> sepehrkur@gmail.com</p>
-        </div>
+    <div class="footer-content">
+      <div>
+        <div class="footer-logo"><i class="fas fa-crown"></i> پوشاک سپهر</div>
+        <p>۵ سال تجربه در عرضه پوشاک باکیفیت</p>
+      </div>
+      <div>
+        <h3>لینک‌ها</h3>
+        <ul>
+          <li><a href="index.html">خانه</a></li>
+          <li><a href="products.html">محصولات</a></li>
+          <li><a href="contact.html">تماس با ما</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>ارتباط</h3>
+        <p><i class="fas fa-phone"></i> 09184740946</p>
+        <p><i class="fas fa-envelope"></i> sepehrkur@gmail.com</p>
       </div>
     </div>
   </footer>
 
-  <!-- Cart Sidebar -->
+  <!-- 🛒 Cart Sidebar -->
   <aside id="cartSidebar" class="cart-sidebar">
     <div class="cart-header">
-      <h3>🛒 سبد خرید</h3>
+      <h3>سبد خرید</h3>
       <button id="closeCart"><i class="fas fa-times"></i></button>
     </div>
-    <div id="cartItems"></div>
+    <div id="cartItems" class="cart-items"></div>
     <div class="cart-footer">
-      <div class="cart-total">
-        جمع کل: <span id="cartTotal">0 تومان</span>
-      </div>
-      <button class="btn btn-primary" onclick="window.location.href='checkout.html'">تکمیل خرید</button>
+      <div>جمع کل: <span id="cartTotal">0 تومان</span></div>
+      <a href="checkout.html" class="btn btn-primary" style="margin-top:1rem;width:100%">تکمیل خرید</a>
     </div>
   </aside>
 
+  <!-- 📜 Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/product-loader.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
