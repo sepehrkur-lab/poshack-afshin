@@ -548,4 +548,24 @@ body {
 h6{
     color: black;
     text-align: start;
+
+}
+/* رفع مشکل هدر در موبایل */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* برای صفحه اصلی که هدر شفاف هست */
+.hero ~ .header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+/* مطمئن شو محتوای اصلی زیر هدر نره */
+.categories, .featured-products, .products-page {
+    padding-top: 20px;
 }
