@@ -1,70 +1,114 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>تکمیل خرید | پوشاک سپهر</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تسویه حساب | پوشاک سپهر</title>
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
+  <!-- 🔝 Header -->
   <header class="header">
-    <div class="container header-top">
-      <div class="logo"><i class="fas fa-crown"></i> پوشاک سپهر</div>
-      <div class="header-actions"><div class="action-buttons"><button id="cartBtn" class="action-btn"><i class="fas fa-shopping-bag"></i><span id="cartCount" class="action-count">0</span></button></div></div>
+    <div class="header-top">
+      <div class="logo">
+        <i class="fas fa-crown"></i>
+        <span>پوشاک سپهر</span>
+      </div>
     </div>
-    <nav class="navbar"><div class="container"><ul class="nav-menu"><li><a href="index.html" class="nav-link">خانه</a></li><li><a href="products.html" class="nav-link">محصولات</a></li></ul></div></nav>
   </header>
 
-  <main class="container" style="margin:2rem auto">
-    <div style="display:grid;grid-template-columns:1fr 360px;gap:1.2rem">
-      <section class="checkout-form" style="background:var(--card);padding:1.2rem;border-radius:12px">
-        <h2>اطلاعات ارسال</h2>
-        <form id="checkoutForm">
-          <div style="margin-bottom:.8rem"><label>نام و نام خانوادگی</label><input id="name" required></div>
-          <div style="margin-bottom:.8rem"><label>شماره تماس</label><input id="phone" required></div>
-          <div style="margin-bottom:.8rem"><label>آدرس</label><textarea id="address" rows="4" required></textarea></div>
-          <div style="margin-bottom:.8rem"><label>کدپستی</label><input id="postal" required></div>
+  <!-- 📌 Checkout Section -->
+  <section class="container" style="margin:2rem 0">
+    <h1 style="margin-bottom:1.5rem">تسویه حساب</h1>
+    <div style="display:flex;flex-wrap:wrap;gap:2rem">
+      
+      <!-- 🛒 سبد خرید -->
+      <div style="flex:2;min-width:280px">
+        <h2 style="margin-bottom:1rem">سبد خرید شما</h2>
+        <div id="checkoutCart"></div>
+      </div>
+
+      <!-- 🧾 فرم اطلاعات -->
+      <div style="flex:1;min-width:280px">
+        <h2 style="margin-bottom:1rem">اطلاعات خریدار</h2>
+        <form id="orderForm" class="checkout-form">
+          <label>نام و نام خانوادگی</label>
+          <input type="text" required>
+
+          <label>شماره تماس</label>
+          <input type="tel" required>
+
+          <label>آدرس</label>
+          <textarea required></textarea>
+
+          <button type="submit" class="btn btn-primary" style="margin-top:1rem;width:100%">ثبت سفارش</button>
         </form>
-      </section>
-
-      <aside class="checkout-summary" style="background:var(--card);padding:1.2rem;border-radius:12px">
-        <h2>خلاصه سفارش</h2>
-        <div id="orderItems"></div>
-        <div style="margin-top:1rem;font-weight:800">جمع کل: <span id="orderTotal">0 تومان</span></div>
-        <button id="payBtn" class="btn btn-primary" style="margin-top:1rem">ثبت سفارش و پرداخت</button>
-      </aside>
+      </div>
     </div>
-  </main>
+  </section>
 
-  <aside id="cartSidebar" class="cart-sidebar">
-    <div class="cart-header"><h3>🛒 سبد خرید</h3><button id="closeCart" class="close-cart"><i class="fas fa-times"></i></button></div>
-    <div id="cartItems" class="cart-items"></div>
-    <div class="cart-footer"><div class="cart-total">جمع کل: <span id="cartTotal">0 تومان</span></div><div class="cart-actions"><a class="btn btn-outline" href="products.html">بازگشت</a><a class="btn btn-primary" href="checkout.html">تکمیل خرید</a></div></div>
-  </aside>
+  <!-- 👣 Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-logo"><i class="fas fa-crown"></i> پوشاک سپهر</div>
+        <p>۵ سال تجربه در عرضه پوشاک باکیفیت</p>
+      </div>
+      <div>
+        <h3>ارتباط</h3>
+        <p><i class="fas fa-phone"></i> 09184740946</p>
+        <p><i class="fas fa-envelope"></i> sepehrkur@gmail.com</p>
+      </div>
+    </div>
+  </footer>
 
-  <div id="notification-root"></div>
-
-  <script defer src="js/script.js"></script>
+  <!-- 📜 Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/script.js"></script>
   <script>
-    // populate order summary from localStorage
-    document.addEventListener('DOMContentLoaded',()=>{
-      const cart = JSON.parse(localStorage.getItem('sepahr_cart') || '[]');
-      const container = document.getElementById('orderItems');
-      const totalEl = document.getElementById('orderTotal');
-      if(!container) return;
-      if(cart.length===0) { container.innerHTML = '<p style="color:#e53e3e">سبد خرید خالی است</p>'; return; }
-      let total=0;
-      container.innerHTML = cart.map(it => { total += it.price * it.quantity; return `<div style="display:flex;justify-content:space-between;padding:.6rem 0">${it.name} x ${it.quantity} <span>${new Intl.NumberFormat('fa-IR').format(it.price*it.quantity)} تومان</span></div>` }).join('');
-      totalEl.textContent = new Intl.NumberFormat('fa-IR').format(total) + ' تومان';
-      document.getElementById('payBtn')?.addEventListener('click',()=>{
-        const name = document.getElementById('name').value.trim();
-        const phone = document.getElementById('phone').value.trim();
-        const address = document.getElementById('address').value.trim();
-        const postal = document.getElementById('postal').value.trim();
-        if(!name||!phone||!address||!postal){ alert('لطفاً همه فیلدها را پر کنید'); return; }
-        alert('سفارش شما ثبت شد — (شبیه‌سازی پرداخت)');
-        localStorage.removeItem('sepahr_cart');
-        window.location.href = 'index.html';
+    // 🛒 نمایش آیتم‌های سبد خرید در صفحه تسویه
+    function renderCheckoutCart() {
+      const container = document.getElementById("checkoutCart");
+      if (cart.items.length === 0) {
+        container.innerHTML = "<p>سبد خرید شما خالی است.</p>";
+        return;
+      }
+
+      container.innerHTML = `
+        <table style="width:100%;border-collapse:collapse">
+          <thead>
+            <tr style="text-align:right;border-bottom:1px solid #ddd">
+              <th>محصول</th>
+              <th>تعداد</th>
+              <th>قیمت</th>
+              <th>جمع</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${cart.items.map(it => `
+              <tr style="border-bottom:1px solid #f1f1f1">
+                <td style="padding:.5rem 0">${it.name}</td>
+                <td>${it.qty}</td>
+                <td>${formatPrice(it.price)} تومان</td>
+                <td>${formatPrice(it.price * it.qty)} تومان</td>
+              </tr>
+            `).join("")}
+          </tbody>
+        </table>
+        <h3 style="margin-top:1rem">جمع کل: ${formatPrice(cart.total())} تومان</h3>
+      `;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderCheckoutCart();
+
+      document.getElementById("orderForm").addEventListener("submit", e => {
+        e.preventDefault();
+        alert("✅ سفارش شما با موفقیت ثبت شد!");
+        window.location.href = "index.html";
       });
     });
   </script>
