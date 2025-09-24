@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         .products-page {
-            padding: 80px 0 50px;
+            padding: 100px 0 50px;
             background: #f8fafc;
             min-height: 100vh;
         }
@@ -54,7 +54,7 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             height: fit-content;
             position: sticky;
-            top: 100px;
+            top: 120px;
         }
 
         .filter-group {
@@ -88,6 +88,10 @@
             justify-content: space-between;
             margin-bottom: 10px;
             color: #718096;
+        }
+
+        .range-slider {
+            width: 100%;
         }
 
         .products-main {
@@ -156,7 +160,7 @@
             color: #718096;
             font-size: 0.9rem;
             margin-bottom: 15px;
-        }
+        } 
 
         .product-price {
             display: flex;
@@ -185,19 +189,52 @@
             border-radius: 8px;
             cursor: pointer;
             transition: background 0.3s ease;
+            font-family: Vazirmatn;
         }
 
         .add-to-cart:hover {
             background: #5a6fd8;
         }
 
+        .product-badges {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 2;
+        }
+
+        .badge {
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .badge-new {
+            background: #48bb78;
+        }
+
+        .badge-discount {
+            background: #e53e3e;
+        }
+
+        .badge-hot {
+            background: #ed8936;
+        }
+
         @media (max-width: 968px) {
             .products-content {
                 grid-template-columns: 1fr;
             }
-            
             .products-sidebar {
                 position: static;
+            }
+            .products-page {
+                padding: 80px 0 30px;
             }
         }
     </style>
@@ -282,14 +319,21 @@
                     <h4>محدوده قیمت</h4>
                     <div class="price-range">
                         <div class="range-values">
-                            <span>0</span>
-                            <span>2,000,000 تومان</span>
+                            <span id="minPrice">0</span>
+                            <span id="maxPrice">2,000,000 تومان</span>
                         </div>
-                        <input type="range" min="0" max="2000000" value="2000000" class="range-slider">
+                        <input type="range" min="0" max="2000000" value="2000000" class="range-slider" id="priceSlider">
                     </div>
                 </div>
 
-                <button class="add-to-cart" onclick="applyFilters()" style="margin-top: 20px;">
+                <div class="filter-group">
+                    <label class="filter-option">
+                        <input type="checkbox" id="discountFilter">
+                        فقط محصولات تخفیف‌دار
+                    </label>
+                </div>
+
+                <button class="add-to-cart" onclick="applyFilters()" style="margin-top: 20px; width: 100%;">
                     اعمال فیلترها
                 </button>
             </aside>
@@ -305,6 +349,7 @@
                             <option value="newest">جدیدترین</option>
                             <option value="price-low">قیمت: کم به زیاد</option>
                             <option value="price-high">قیمت: زیاد به کم</option>
+                            <option value="discount">بیشترین تخفیف</option>
                         </select>
                     </div>
                 </div>
@@ -320,13 +365,31 @@
         let allProducts = [];
         let filteredProducts = [];
 
-        // بارگذاری محصولات از localStorage
-        function loadProducts() {
-            const savedProducts = localStorage.getItem('sepahr_products');
-            allProducts = savedProducts ? JSON.parse(savedProducts) : [];
+        // بارگذاری محصولات از GitHub و localStorage
+        async function loadProducts() {
+            try {
+                // اول از GitHub试试
+                const response = await fetch('products.json');
+                if (response.ok) {
+                    const data = await response.json();
+                    allProducts = data.products || [];
+                    console.log('محصولات از GitHub بارگذاری شد:', allProducts.length);
+                }
+            } catch (error) {
+                console.log('بارگذاری از GitHub شکست خورد، استفاده از localStorage...');
+            }
+
+            // اگر GitHub کار نکرد، از localStorage
+            if (allProducts.length === 0) {
+                const savedProducts = localStorage.getItem('sepahr_products');
+                allProducts = savedProducts ? JSON.parse(savedProducts) : [];
+                console.log('محصولات از localStorage بارگذاری شد:', allProducts.length);
+            }
+
             filteredProducts = [...allProducts];
             displayProducts();
             updateProductsCount();
+            updatePriceSlider();
         }
 
         // نمایش محصولات
@@ -345,16 +408,22 @@
             }
 
             grid.innerHTML = filteredProducts.map(product => `
-                <div class="product-card">
+                <div class="product-card" style="position: relative;">
+                    <div class="product-badges">
+                        ${product.isNew ? '<span class="badge badge-new">جدید</span>' : ''}
+                        ${product.discount ? `<span class="badge badge-discount">${product.discount}%</span>` : ''}
+                        ${product.isHot ? '<span class="badge badge-hot">پرفروش</span>' : ''}
+                    </div>
                     <div class="product-image">
-                        <img src="${product.image}" alt="${product.name}" 
-                             onerror="this.src='https://via.placeholder.com/300x300?text=تصویر+موجود+نیست'">
+                        <img src="${product.image || product.images?.[0]}" alt="${product.name}" 
+                             onerror="this.src='https://images.unsplash.com/photo-1558769132-cb1a5c63d3f3?ixlib=rb-4.0.3&w=500&q=80'">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">${product.name}</h3>
                         <div class="product-category">${product.category} - ${product.type}</div>
                         <div class="product-price">
                             <span class="current-price">${formatPrice(product.price)} تومان</span>
+                            ${product.oldPrice ? `<span class="old-price">${formatPrice(product.oldPrice)} تومان</span>` : ''}
                         </div>
                         <button class="add-to-cart" onclick="addToCart(${product.id})">
                             <i class="fas fa-shopping-cart"></i>
@@ -368,12 +437,15 @@
         // اعمال فیلترها
         function applyFilters() {
             const selectedCategory = document.querySelector('input[name="category"]:checked').value;
-            const priceRange = document.querySelector('.range-slider').value;
+            const priceRange = parseInt(document.getElementById('priceSlider').value);
+            const discountOnly = document.getElementById('discountFilter').checked;
 
             filteredProducts = allProducts.filter(product => {
                 const categoryMatch = selectedCategory === 'all' || product.category === selectedCategory;
                 const priceMatch = product.price <= priceRange;
-                return categoryMatch && priceMatch;
+                const discountMatch = !discountOnly || product.discount > 0;
+                
+                return categoryMatch && priceMatch && discountMatch;
             });
 
             sortProducts();
@@ -389,6 +461,8 @@
                         return a.price - b.price;
                     case 'price-high':
                         return b.price - a.price;
+                    case 'discount':
+                        return (b.discount || 0) - (a.discount || 0);
                     case 'newest':
                     default:
                         return b.id - a.id;
@@ -396,6 +470,19 @@
             });
 
             displayProducts();
+            updateProductsCount();
+        }
+
+        // آپدیت اسلایدر قیمت
+        function updatePriceSlider() {
+            const slider = document.getElementById('priceSlider');
+            const maxPrice = document.getElementById('maxPrice');
+            
+            if (slider && maxPrice) {
+                slider.addEventListener('input', function() {
+                    maxPrice.textContent = formatPrice(this.value) + ' تومان';
+                });
+            }
         }
 
         // افزودن به سبد خرید
@@ -417,7 +504,7 @@
 
             localStorage.setItem('sepahr_cart', JSON.stringify(cart));
             updateCartCounter();
-            showNotification('محصول به سبد خرید اضافه شد!');
+            showNotification('محصول به سبد خرید اضافه شد! ✅');
         }
 
         // به‌روزرسانی شمارنده سبد خرید
@@ -447,7 +534,6 @@
 
         // نمایش نوتیفیکیشن
         function showNotification(message) {
-            // ایجاد یک نوتیفیکیشن ساده
             const notification = document.createElement('div');
             notification.style.cssText = `
                 position: fixed;
@@ -460,6 +546,7 @@
                 border-radius: 10px;
                 z-index: 1000;
                 font-family: Vazirmatn;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             `;
             notification.textContent = message;
             document.body.appendChild(notification);
@@ -479,7 +566,7 @@
                 radio.addEventListener('change', applyFilters);
             });
             
-            document.querySelector('.range-slider').addEventListener('input', applyFilters);
+            document.getElementById('discountFilter').addEventListener('change', applyFilters);
         });
     </script>
 </body>
