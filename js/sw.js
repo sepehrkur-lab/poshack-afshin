@@ -1,36 +1,39 @@
-const CACHE_NAME = 'sepahr-shop-v1';
+const CACHE_NAME = "sepahr-shop-v2";
 const urlsToCache = [
-    '/',
-    '/index.html',
-    '/products.html',
-    '/about.html',
-    '/contact.html',
-    '/checkout.html',
-    '/admin-login.html',
-    '/product-detail.html',
-    '/css/style.css',
-    '/js/script.js',
-    '/manifest.json'
+  "/",
+  "/index.html",
+  "/products.html",
+  "/product-detail.html",
+  "/checkout.html",
+  "/about.html",
+  "/contact.html",
+  "/admin-login.html",
+  "/css/style.css",
+  "/js/script.js",
+  "/js/product-loader.js",
+  "/js/products.js",
+  "/manifest.json"
 ];
 
-self.addEventListener('install', function(event) {
-    event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then(function(cache) {
-                return cache.addAll(urlsToCache);
-            })
-    );
+// نصب Service Worker
+self.addEventListener("install", e => {
+  e.waitUntil(
+    caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache))
+  );
 });
 
-self.addEventListener('fetch', function(event) {
-    event.respondWith(
-        caches.match(event.request)
-            .then(function(response) {
-                if (response) {
-                    return response;
-                }
-                return fetch(event.request);
-            }
-        )
-    );
+// فعال‌سازی
+self.addEventListener("activate", e => {
+  e.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
+    )
+  );
+});
+
+// واکشی
+self.addEventListener("fetch", e => {
+  e.respondWith(
+    caches.match(e.request).then(res => res || fetch(e.request))
+  );
 });
