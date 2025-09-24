@@ -1,126 +1,41 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>محصولات | پوشاک سپهر</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script defer src="js/products.js"></script>
-  <script defer src="js/script.js"></script>
-  <script defer src="js/product-loader.js"></script>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-  <!-- Header -->
   <header class="header">
-    <div class="container">
-      <div class="header-top">
-        <div class="logo">
-          <i class="fas fa-crown"></i>
-          <span>پوشاک سپهر</span>
-        </div>
-        <div class="header-actions">
-          <div class="search-box">
-            <input type="text" placeholder="جستجوی محصولات..." id="searchInput">
-            <button class="search-btn"><i class="fas fa-search"></i></button>
-            <div class="search-results" id="searchResults"></div>
-          </div>
-          <div class="action-buttons">
-            <button class="action-btn" id="cartBtn">
-              <i class="fas fa-shopping-bag"></i>
-              <span class="action-count" id="cartCount">0</span>
-            </button>
-          </div>
-        </div>
-      </div>
-      <nav class="navbar">
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">خانه</a></li>
-          <li><a href="products.html" class="nav-link active">محصولات</a></li>
-          <li><a href="products.html?discount=true" class="nav-link">تخفیف‌ها</a></li>
-          <li><a href="about.html" class="nav-link">درباره ما</a></li>
-          <li><a href="contact.html" class="nav-link">تماس با ما</a></li>
-        </ul>
-      </nav>
+    <div class="container header-top">
+      <div class="logo"><i class="fas fa-crown"></i> پوشاک سپهر</div>
+      <div class="header-actions"><div class="action-buttons"><button id="cartBtn" class="action-btn"><i class="fas fa-shopping-bag"></i><span id="cartCount" class="action-count">0</span></button></div></div>
     </div>
+    <nav class="navbar"><div class="container"><ul class="nav-menu"><li><a href="index.html" class="nav-link">خانه</a></li><li><a class="nav-link active" href="products.html">محصولات</a></li></ul></div></nav>
   </header>
 
-  <!-- Filters -->
-  <section class="filters container">
-    <div class="filter-bar">
-      <div class="filter-group">
-        <label for="categoryFilter">دسته‌بندی:</label>
-        <select id="categoryFilter">
-          <option value="all">همه</option>
-          <option value="پسرانه">پسرانه</option>
-          <option value="دخترانه">دخترانه</option>
-          <option value="نوزاد">نوزاد</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <label for="sortFilter">مرتب‌سازی:</label>
-        <select id="sortFilter">
-          <option value="latest">جدیدترین</option>
-          <option value="priceLow">ارزان‌ترین</option>
-          <option value="priceHigh">گران‌ترین</option>
-          <option value="discount">بیشترین تخفیف</option>
-        </select>
-      </div>
+  <main class="container" style="margin-top:1.6rem">
+    <div class="filters" style="margin-bottom:1rem;display:flex;gap:1rem;align-items:center">
+      <div><label>دسته:</label><select id="categoryFilter"><option value="all">همه</option><option value="دخترانه">دخترانه</option><option value="پسرانه">پسرانه</option><option value="نوزاد">نوزاد</option></select></div>
+      <div><label>مرتب‌سازی:</label><select id="sortFilter"><option value="latest">جدیدترین</option><option value="priceLow">قیمت: کم به زیاد</option><option value="priceHigh">قیمت: زیاد به کم</option><option value="discount">بیشترین تخفیف</option></select></div>
     </div>
-  </section>
 
-  <!-- Products -->
-  <section class="container">
-    <div class="products-grid" id="allProducts">
-      <!-- محصولات با جاوااسکریپت لود می‌شن -->
-    </div>
-  </section>
+    <div id="allProducts" class="products-grid"></div>
+  </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <div class="footer-logo">
-            <i class="fas fa-crown"></i>
-            <span>پوشاک سپهر</span>
-          </div>
-          <p>۵ سال تجربه در عرضه پوشاک باکیفیت</p>
-        </div>
-        <div class="footer-section">
-          <h3>لینک‌های سریع</h3>
-          <ul>
-            <li><a href="index.html">خانه</a></li>
-            <li><a href="products.html">محصولات</a></li>
-            <li><a href="about.html">درباره ما</a></li>
-            <li><a href="contact.html">تماس با ما</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>ارتباط</h3>
-          <p><i class="fas fa-phone"></i> 09184740946</p>
-          <p><i class="fas fa-envelope"></i> sepehrkur@gmail.com</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Cart Sidebar -->
   <aside id="cartSidebar" class="cart-sidebar">
-    <div class="cart-header">
-      <h3>🛒 سبد خرید</h3>
-      <button id="closeCart"><i class="fas fa-times"></i></button>
-    </div>
-    <div id="cartItems"></div>
-    <div class="cart-footer">
-      <div class="cart-total">
-        جمع کل: <span id="cartTotal">0 تومان</span>
-      </div>
-      <button class="btn btn-primary" onclick="window.location.href='checkout.html'">تکمیل خرید</button>
-    </div>
+    <div class="cart-header"><h3>🛒 سبد خرید</h3><button id="closeCart" class="close-cart"><i class="fas fa-times"></i></button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer"><div class="cart-total">جمع کل: <span id="cartTotal">0 تومان</span></div><div class="cart-actions"><a class="btn btn-outline" href="index.html">ادامه خرید</a><a class="btn btn-primary" href="checkout.html">تکمیل خرید</a></div></div>
   </aside>
 
+  <div id="notification-root"></div>
+
+  <script defer src="js/products.js"></script>
+  <script defer src="js/product-loader.js"></script>
+  <script defer src="js/script.js"></script>
 </body>
 </html>
