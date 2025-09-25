@@ -139,6 +139,14 @@
       });
     });
   </script>
+      <script>
+  document.getElementById("checkoutForm").addEventListener("submit", e => {
+    e.preventDefault();
+    alert("✅ سفارش شما با موفقیت ثبت شد! به زودی با شما تماس می‌گیریم.");
+    e.target.reset();
+  });
+</script>
 </body>
 </html>
+
 
