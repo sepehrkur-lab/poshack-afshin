@@ -149,7 +149,7 @@ const products = [
     price: 350000,
     category: "پسرانه",
     image: "https://cdn.imgurl.ir/uploads/v5624_InShot_20250923_162717584.jpg",
-    description: " ست اسپرت طرح گوسفند داخل نخ پنبه برای زمستان و پائیز.  ",
+    description: " ست اسپرت طرح گوسفند داخل نخ پنبه برای زمستان و پائیز. ",
   },
   {
     id: 17,
@@ -159,6 +159,15 @@ const products = [
     category: "پسرانه",
     image: "https://cdn.imgurl.ir/uploads/i875820_InShot_20250923_163533966.jpg",
     description: " تیشرت پسرانه جنس نخ پنبه ، در رنگ قرمز،مناسب برای سنین۸ تا ۱۳ سال",
+  },
+  {
+    id: 18,
+    name: " کلاه لی پوما ",
+    oldPrice: 400000,
+    price: 340000,
+    category: "پسرانه",
+    image: "https://cdn.imgurl.ir/uploads/q484300_InShot_20250923_162213502.png",
+    description: " کلاه لی اصلی پوما ",
   },
 ];
 
