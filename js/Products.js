@@ -131,7 +131,7 @@ const products = [
     price: 750000,
     category: "پسرانه",
     image: "https://cdn.imgurl.ir/uploads/c204858_InShot_20250925_190642597.jpg",
-    description: " ست اسپرت مخمل کبریتی ، در رنگ کرنی ، مناسب برای سنین ۸ تا ۱۳ سال ",
+    description: " ست اسپرت مخمل کبریتی ، در رنگ کرمی ، مناسب برای سنین ۸ تا ۱۳ سال ",
   },
   {
     id: 15,
