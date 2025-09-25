@@ -124,5 +124,15 @@ const products = [
     image: "https://cdn.imgurl.ir/uploads/s497702_InShot_20250923_162913103.jpg",
     description: " شلوار خانگی پسرانه ،جنس نخ ، مناسب برای سنین ۷ تا ۹ سال در رنگ بندی های مختلف",
   },
+  
+  {
+    id: 14,
+    name: " ست مخمل اسپرت پاییزی ",
+    oldPrice: 1000000,
+    price: 750000,
+    category: "پسرانه",
+    image: "https://cdn.imgurl.ir/uploads/c204858_InShot_20250925_190642597.jpg",
+    description: " ست اسپرت مخمل کبریتی ، در رنگ کرنی ، مناسب برای سنین ۸ تا ۱۳ سال ",
+  },
 ];
 
