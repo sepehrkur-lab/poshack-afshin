@@ -115,5 +115,14 @@ const products = [
     image: "https://cdn.imgurl.ir/uploads/o610484_InShot_20250925_133712020.jpg",
     description: " پیرهن ۱۰۰٪ لی ، مناسب برای سنین ۸ تا ۱۴ سال ",
   },
+    {
+    id: 13,
+    name: " شلوار خانگی اسپرت ",
+    oldPrice: 200000,
+    price: 80000,
+    category: "پسرانه",
+    image: "https://cdn.imgurl.ir/uploads/s497702_InShot_20250923_162913103.jpg",
+    description: " شلوار خانگی پسرانه ،جنس نخ ، مناسب برای سنین ۷ تا ۹ سال در رنگ بندی های مختلف",
+  },
 ];
 
