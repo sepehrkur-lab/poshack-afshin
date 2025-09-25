@@ -85,5 +85,15 @@ const products = [
     image: "https://cdn.imgurl.ir/uploads/g547405_InShot_20250925_104916017.jpg",
     description: " سه تیکه ی پسرانه ی کتان، برای سنین ۴ تا ۷ سال.  ",
   },
+  
+  {
+    id: 10,
+    name: " ست پسرانه طرح بسکتبال ",
+    oldPrice: 390000,
+    price: 280000,
+    category: "پسرانه",
+    image: "https://cdn.imgurl.ir/uploads/o081937_InShot_20250923_163022312.jpg",
+    description: " ست پسرانه طرح بسکتبال برای سنین ۳ تا ۸ سال ",
+  },
 ];
 
