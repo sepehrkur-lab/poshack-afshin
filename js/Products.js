@@ -6,7 +6,7 @@ const products = [
     oldPrice: 550000,
     price: 400000,
     category: "دخترانه",
-    image: "InShot_20250923_152332625.png",
+    image: "https://cdn.imgurl.ir/uploads/r213313_InShot_20250923_152332625.png",
     description: " شلوار ۱۰۰٪ لی دخترانه    .",
   },
   {
@@ -15,7 +15,7 @@ const products = [
     oldPrice: 500000,
     price: 350000,
     category: "پسرانه",
-    image: "InShot_20250923_162717584.jpg",
+    image: "https://cdn.imgurl.ir/uploads/r213313_InShot_20250923_152332625.png",
     description: " ست اسپرت طرح گوسفند داخل نخ پنبه برای زمستان و پائیز.  ",
   },
 ];
