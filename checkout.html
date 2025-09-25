@@ -31,24 +31,51 @@
         <div id="checkoutCart"></div>
       </div>
 
-      <!-- 🧾 فرم اطلاعات -->
-      <div style="flex:1;min-width:280px">
-        <h2 style="margin-bottom:1rem">اطلاعات خریدار</h2>
-        <form id="orderForm" class="checkout-form">
-          <label>نام و نام خانوادگی</label>
-          <input type="text" required>
+      <!-- 📝 فرم اطلاعات -->
+<div style="flex:1;min-width:280px">
+  <h2 style="margin-bottom:1rem">اطلاعات خریدار</h2>
+  <form id="checkoutForm" class="checkout-form">
 
-          <label>شماره تماس</label>
-          <input type="tel" required>
-
-          <label>آدرس</label>
-          <textarea required></textarea>
-
-          <button type="submit" class="btn btn-primary" style="margin-top:1rem;width:100%">ثبت سفارش</button>
-        </form>
-      </div>
+    <div class="form-group">
+      <label for="fullname"><i class="fas fa-user"></i> نام و نام خانوادگی</label>
+      <input type="text" id="fullname" placeholder="نام و نام خانوادگی خود را وارد کنید" required>
     </div>
-  </section>
+
+    <div class="form-group">
+      <label for="phone"><i class="fas fa-phone"></i> شماره تماس</label>
+      <input type="tel" id="phone" placeholder="0912xxxxxxx" required>
+    </div>
+
+    <div class="form-group">
+      <label for="address"><i class="fas fa-map-marker-alt"></i> آدرس</label>
+      <textarea id="address" rows="3" placeholder="آدرس کامل محل دریافت سفارش" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="city"><i class="fas fa-city"></i> شهر</label>
+      <input type="text" id="city" placeholder="نام شهر" required>
+    </div>
+
+    <div class="form-group">
+      <label for="postal"><i class="fas fa-mail-bulk"></i> کد پستی</label>
+      <input type="text" id="postal" placeholder="کد پستی ۱۰ رقمی" required>
+    </div>
+
+    <div class="form-group">
+      <label for="payment"><i class="fas fa-credit-card"></i> روش پرداخت</label>
+      <select id="payment" required>
+        <option value="">انتخاب کنید</option>
+        <option value="online">پرداخت آنلاین</option>
+        <option value="cod">پرداخت در محل</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn-submit">
+      <i class="fas fa-check-circle"></i> ثبت سفارش
+    </button>
+  </form>
+</div>
+
 
   <!-- 👣 Footer -->
   <footer class="footer">
@@ -114,3 +141,4 @@
   </script>
 </body>
 </html>
+
