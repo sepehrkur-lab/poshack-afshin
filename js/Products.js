@@ -148,8 +148,8 @@ const products = [
     oldPrice: 500000,
     price: 350000,
     category: "پسرانه",
-    image: "https://cdn.imgurl.ir/uploads/v5624_InShot_20250923_162717584.jpg",
-    description: " ست اسپرت طرح گوسفند داخل نخ پنبه برای زمستان و پائیز. ",
+    image: "https://cdn.imgurl.ir/uploads/h890842_InShot_20250923_162520432.png",
+    description: " ست اسپرت طرح متنی جنس داخل نخ پنبه برای زمستان و پائیز. ",
   },
   {
     id: 17,
@@ -168,6 +168,15 @@ const products = [
     category: "پسرانه",
     image: "https://cdn.imgurl.ir/uploads/q484300_InShot_20250923_162213502.png",
     description: " کلاه لی اصلی پوما ",
+  },
+    {
+    id: 19,
+    name: " دامن مجلسی دخترانه ",
+    oldPrice: 520000,
+    price: 350000,
+    category: "پسرانه",
+    image: "https://cdn.imgurl.ir/uploads/x08287_InShot_20250925_105942554.png",
+    description: " دامن مجلسی دخترانه سه لایه،مناسب برای سنین ۶ تا ۱۰ سال ",
   },
 ];
 
