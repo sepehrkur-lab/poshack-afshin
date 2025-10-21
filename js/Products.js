@@ -186,6 +186,14 @@ const products = [
     category: "دخترانه",
     image: "https://cdn.imgurl.ir/uploads/l436374_image_1761044518799.jpeg",
     description: " کراپ برای سنین ۶ تا ۱۰ سال ",
+  },{
+    id: 21,
+    name: " پیرهن دامنی ",
+    oldPrice: 450000,
+    price: 370000,
+    category: "دخترانه",
+    image: "https://cdn.imgurl.ir/uploads/c01733_image_1761057566012.jpeg",
+    description: "  پیرهن دامنی مجلسی دخترانه سه لایه،مناسب برای سنین ۶ تا ۱۰ سال ",
   },
 ];
 
