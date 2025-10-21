@@ -201,7 +201,7 @@ const products = [
     oldPrice: 600000,
     price: 380000,
     category: "دخترانه",
-    image: "https://cdn.imgurl.ir/uploads/c01733_image_1761057566012.jpeg",
+    image: "https://cdn.imgurl.ir/uploads/t054116_copilot_image_1761059694590.jpeg",
     description: " هودی دخترانه طرح جقد در چها رنگ مناسب برای سنین ۶ تا ۱۳ سال بهترین جنس ",
   },
 ];
