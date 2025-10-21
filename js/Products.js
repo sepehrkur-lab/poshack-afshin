@@ -148,7 +148,7 @@ const products = [
     oldPrice: 500000,
     price: 350000,
     category: "پسرانه",
-    image: "https://cdn.imgurl.ir/uploads/h890842_InShot_20250923_162520432.png",
+    image: "https://cdn.imgurl.ir/uploads/y604976_image_1761044708684.jpeg.png",
     description: " ست اسپرت طرح متنی جنس داخل نخ پنبه برای زمستان و پائیز. ",
   },
   {
