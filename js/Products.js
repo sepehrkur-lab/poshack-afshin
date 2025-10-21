@@ -195,5 +195,14 @@ const products = [
     image: "https://cdn.imgurl.ir/uploads/c01733_image_1761057566012.jpeg",
     description: "  پیرهن دامنی مجلسی دخترانه سه لایه،مناسب برای سنین ۶ تا ۱۰ سال ",
   },
+  {
+    id: 22,
+    name: " هودی طرح جقد ",
+    oldPrice: 600000,
+    price: 380000,
+    category: "دخترانه",
+    image: "https://cdn.imgurl.ir/uploads/c01733_image_1761057566012.jpeg",
+    description: " هودی دخترانه طرح جقد در چها رنگ مناسب برای سنین ۶ تا ۱۳ سال بهترین جنس ",
+  },
 ];
 
