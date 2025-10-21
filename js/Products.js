@@ -178,5 +178,14 @@ const products = [
     image: "https://cdn.imgurl.ir/uploads/x08287_InShot_20250925_105942554.png",
     description: " دامن مجلسی دخترانه سه لایه،مناسب برای سنین ۶ تا ۱۰ سال ",
   },
+  {
+    id: 20,
+    name: " کراپ دخترانه ",
+    oldPrice: 500000,
+    price: 350000,
+    category: "دخترانه",
+    image: "https://cdn.imgurl.ir/uploads/l436374_image_1761044518799.jpeg",
+    description: " کراپ برای سنین ۶ تا ۱۰ سال ",
+  },
 ];
 
