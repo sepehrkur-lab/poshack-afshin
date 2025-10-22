@@ -82,7 +82,7 @@ const products = [
     oldPrice: 750000,
     price: 620000,
     category: "پسرانه",
-    image: "https://cdn.imgurl.ir/uploads/g547405_InShot_20250925_104916017.jpg",
+    image: "https://biaupload.com/do.php?imgf=org-8cf109e092af1.jpeg",
     description: " سه تیکه ی پسرانه ی کتان، برای سنین ۴ تا ۷ سال.  ",
   },
   
