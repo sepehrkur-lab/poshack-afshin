@@ -53,7 +53,7 @@ const products = [
     oldPrice: 1500000,
     price: 890000,
     category: "دخترانه",
-    image: "https://cdn.imgurl.ir/uploads/q15926_InShot_20250923_152301956.jpg",
+    image: "https://biaupload.com/do.php?imgf=org-9dad4276bc941.jpeg",
     description: " ست دخترانه ۱۰۰٪ چرم برای سنین ۷ تا ۱۲ سال  ",
   },
   {
