@@ -24,7 +24,7 @@ const products = [
     oldPrice: 330000,
     price: 240000,
     category: "نوزاد",
-    image: "https://cdn.imgurl.ir/uploads/a304010_InShot_20250923_160132962.png",
+    image: "https://cdn.imgurl.ir/uploads/m7249_image_1761233228751.jpeg",
     description: " شلوار لی نوزادی از یک سال تا چهار سال مناسب برای پائیز، در دو رنگ مشکی و سفید.  ",
   },
       {
