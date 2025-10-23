@@ -112,7 +112,7 @@ const products = [
     oldPrice: 480000,
     price: 390000,
     category: "پسرانه",
-    image: "https://cdn.imgurl.ir/uploads/o610484_InShot_20250925_133712020.jpg",
+    image: "https://biaupload.com/do.php?imgf=org-db8af949a9921.jpeg",
     description: " پیرهن ۱۰۰٪ لی ، مناسب برای سنین ۸ تا ۱۴ سال ",
   },
     {
