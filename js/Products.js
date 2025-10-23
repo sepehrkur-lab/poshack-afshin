@@ -33,7 +33,7 @@ const products = [
     oldPrice: 250000,
     price: 190000,
     category: "دخترانه",
-    image: "https://cdn.imgurl.ir/uploads/f937078_InShot_20250923_161706013.png",
+    image: "https://cdn.imgurl.ir/uploads/w771258_image_1761232515485.jpeg",
     description: " شال و کلاه دخترانه در رنگ بندی های، قرمز🟥،سبز 🟩،خاکستری⚪️ و آبی 🔵 ",
   },
   
