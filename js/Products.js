@@ -15,7 +15,7 @@ const products = [
     oldPrice: 500000,
     price: 350000,
     category: "پسرانه",
-    image: "https://cdn.imgurl.ir/uploads/v5624_InShot_20250923_162717584.jpg",
+    image: "https://biaupload.com/do.php?imgf=org-cc054b3248a81.jpeg",
     description: " ست اسپرت طرح گوسفند داخل نخ پنبه برای زمستان و پائیز.  ",
   },
     {
