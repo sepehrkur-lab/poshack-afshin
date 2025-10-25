@@ -6,7 +6,7 @@ const products = [
     oldPrice: 550000,
     price: 400000,
     category: "دخترانه",
-    image: "https://cdn.imgurl.ir/uploads/r213313_InShot_20250923_152332625.png",
+    image: "https://cdn.imgurl.ir/uploads/f338130_image_1761327232578.jpeg",
     description: " شلوار ۱۰۰٪ لی دخترانه    .",
   },
   {
