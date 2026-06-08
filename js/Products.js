@@ -6,7 +6,7 @@ const products = [
     oldPrice: 550000,
     price: 400000,
     category: "دخترانه",
-    image: "https://cdn.imgurl.ir/uploads/f338130_image_1761327232578.jpeg",
+    image: "https://cdn.imgurl.ir/uploads/o26278_IMG_20260608_112145_893.jpg",
     description: " شلوار ۱۰۰٪ لی دخترانه    .",
   },
   {
@@ -15,7 +15,7 @@ const products = [
     oldPrice: 500000,
     price: 350000,
     category: "پسرانه",
-    image: "https://biaupload.com/do.php?imgf=org-cc054b3248a81.jpeg",
+    image: "https://cdn.imgurl.ir/uploads/j796520_IMG_20260608_112114_903.jpg",
     description: " ست اسپرت طرح گوسفند داخل نخ پنبه برای زمستان و پائیز.  ",
   },
     {
@@ -24,7 +24,7 @@ const products = [
     oldPrice: 330000,
     price: 240000,
     category: "نوزاد",
-    image: "https://cdn.imgurl.ir/uploads/m7249_image_1761233228751.jpeg",
+    image: "https://cdn.imgurl.ir/uploads/d608984_IMG_20260608_112051_302.jpg",
     description: " شلوار لی نوزادی از یک سال تا چهار سال مناسب برای پائیز، در دو رنگ مشکی و سفید.  ",
   },
       {
@@ -33,7 +33,7 @@ const products = [
     oldPrice: 250000,
     price: 190000,
     category: "دخترانه",
-    image: "https://cdn.imgurl.ir/uploads/w771258_image_1761232515485.jpeg",
+    image: "https://cdn.imgurl.ir/uploads/g224399_IMG_20260608_112100_245.jpg",
     description: " شال و کلاه دخترانه در رنگ بندی های، قرمز🟥،سبز 🟩،خاکستری⚪️ و آبی 🔵 ",
   },
   
@@ -43,7 +43,7 @@ const products = [
     oldPrice: 300000,
     price: 190000,
     category: "پسرانه",
-    image: "https://cdn.imgurl.ir/uploads/j63469_InShot_20250925_105819632.png",
+    image: "https://cdn.imgurl.ir/uploads/b409236_IMG_20260608_112103_092.jpg",
     description: " شلوار پسرانه ،برچسب تزریقی،مناسب برای سنین ۸ تا ۱۳ سال ، در رنگ بندی های سفید⚪️،سیاه⚫️ ",
   },
   
@@ -52,8 +52,8 @@ const products = [
     name: " ست کامل چرم زمستانی ",
     oldPrice: 1500000,
     price: 890000,
-    category: "دخترانه",
-    image: "https://biaupload.com/do.php?imgf=org-9dad4276bc941.jpeg",
+   category: "دخترانه",
+    image: "https://cdn.imgurl.ir/uploads/i28049_IMG_20260608_112117_181.jpg",
     description: " ست دخترانه ۱۰۰٪ چرم برای سنین ۷ تا ۱۲ سال  ",
   },
   {
@@ -62,7 +62,7 @@ const products = [
     oldPrice: 450000,
     price: 390000,
     category: "دخترانه",
-    image: "https://biaupload.com/do.php?imgf=org-af7d69387ea61.jpeg",
+    image: "https://cdn.imgurl.ir/uploads/z104454_IMG_20260608_112049_421.jpg",
     description: " هوی دخترانه جنس ۱۰۰٪ نخ، داخل پنبه، مناسب برای سنین ۱۱ سال تا ۱۴ سال، در رنگ بندی های کریستالی🟣،زرد🟨،سبز🟢 و آبی 🔵 ",
   },
   
@@ -72,7 +72,7 @@ const products = [
     oldPrice: 420000,
     price: 340000,
     category: "دخترانه",
-    image: "https://cdn.imgurl.ir/uploads/e284174_InShot_20250923_152507173.png",
+    image: "https://cdn.imgurl.ir/uploads/a338903_IMG_20260608_113120_322.jpg",
     description: " شلوار لی دخترانه رنگ آبی🔵 برای سنین ۷ تا ۱۳ سال ",
   },
   
@@ -82,18 +82,18 @@ const products = [
     oldPrice: 750000,
     price: 620000,
     category: "پسرانه",
-    image: "https://biaupload.com/do.php?imgf=org-8cf109e092af1.jpeg",
+    image: "https://cdn.imgurl.ir/uploads/n497393_IMG_20260608_112046_307.jpg",
     description: " سه تیکه ی پسرانه ی کتان، برای سنین ۴ تا ۷ سال.  ",
   },
   
   {
     id: 10,
-    name: " ست پسرانه طرح بسکتبال ",
+    name: "ست پسرانه   ",
     oldPrice: 390000,
     price: 280000,
     category: "پسرانه",
-    image: "https://cdn.imgurl.ir/uploads/o081937_InShot_20250923_163022312.jpg",
-    description: " ست پسرانه طرح بسکتبال برای سنین ۳ تا ۸ سال ",
+    image: "https://cdn.imgurl.ir/uploads/m524438_IMG_20260608_112103_092.jpg",
+    description: " ست پسرانه برای سنین ۳ تا ۸ سال ",
   },
   
   {
