@@ -157,7 +157,7 @@ const products = [
     oldPrice: 450000,
     price: 350000,
     category: "پسرانه",
-    image: "https://cdn.imgurl.ir/uploads/i875820_InShot_20250923_163533966.jpg",
+    image: "https://cdn.imgurl.ir/uploads/m2351_IMG_20260608_114037_322.jpg",
     description: " تیشرت پسرانه جنس نخ پنبه ، در رنگ قرمز،مناسب برای سنین۸ تا ۱۳ سال",
   },
   {
@@ -166,7 +166,7 @@ const products = [
     oldPrice: 400000,
     price: 340000,
     category: "پسرانه",
-    image: "https://cdn.imgurl.ir/uploads/q484300_InShot_20250923_162213502.png",
+    image: "https://cdn.imgurl.ir/uploads/g127654_IMG_20260608_113901_883.jpg",
     description: " کلاه لی اصلی پوما ",
   },
     {
@@ -201,7 +201,7 @@ const products = [
     oldPrice: 600000,
     price: 380000,
     category: "دخترانه",
-    image: "https://cdn.imgurl.ir/uploads/t054116_copilot_image_1761059694590.jpeg",
+    image: "https://cdn.imgurl.ir/uploads/o58106_IMG_20260608_112044_388.jpg",
     description: " هودی دخترانه طرح جقد در چها رنگ مناسب برای سنین ۶ تا ۱۳ سال بهترین جنس ",
   },
 ];
