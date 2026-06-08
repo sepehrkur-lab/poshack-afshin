@@ -112,7 +112,7 @@ const products = [
     oldPrice: 480000,
     price: 390000,
     category: "پسرانه",
-    image: "https://biaupload.com/do.php?imgf=org-db8af949a9921.jpeg",
+    image: "https://cdn.imgurl.ir/uploads/b322868_IMG_20260608_112053_892.jpg",
     description: " پیرهن ۱۰۰٪ لی ، مناسب برای سنین ۸ تا ۱۴ سال ",
   },
     {
@@ -130,7 +130,7 @@ const products = [
     oldPrice: 1000000,
     price: 750000,
     category: "پسرانه",
-    image: "https://cdn.imgurl.ir/uploads/c204858_InShot_20250925_190642597.jpg",
+    image: "https://cdn.imgurl.ir/uploads/70361_IMG_20260608_112122_708.jpg",
     description: " ست اسپرت مخمل کبریتی ، در رنگ کرمی ، مناسب برای سنین ۸ تا ۱۳ سال ",
   },
   {
